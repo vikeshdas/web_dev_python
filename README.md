@@ -1,13 +1,13 @@
 # web_dev_python
 
 This is a web application  developed using the django framework.Data based is used mysql. I have explained all the API designed . 
-Client
-    put(): create a new client.
-User
-    get() : get information of a user by user_id.
-    put(): create user .insert information of user in databases.
-    patch() :update user information by user_ id.
-    delete() : delete user from the database by user_id.
+Client<br>
+    put(): create a new client.<br>
+User<br>
+    get() : get information of a user by user_id.<br>
+    put(): create user .insert information of user in databases.<br>
+    patch() :update user information by user_ id.<br>
+    delete() : delete user from the database by user_id.<br>
 Users
     get(): fetch information of all users of a client by client_id.
 Role
