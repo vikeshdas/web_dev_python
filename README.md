@@ -1,6 +1,6 @@
 # web_dev_python
 
-This is a web application  developed using the django framework.Data based is used mysql. I have explained all the API designed . <br>
+This is a web application  developed using the django framework.Data based is used mysql. I have explained all the routes . <br>
 **Client**<br>
     put(): create a new client.<br>
 **User**<br>
@@ -23,7 +23,7 @@ This is a web application  developed using the django framework.Data based is us
 **Consignments**<br>
     get() : get all consignments of a particular client by client_id.<br>
 
-**Feature of django used**
+**django**
 I used the VIEW class of django which provides features to create  a view including request ,response handling and error handling.
 <br>Sql database is used to store the data.<br>
 <br>ORM feature is used to design the database schema.Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.<br>
@@ -34,7 +34,7 @@ I used the VIEW class of django which provides features to create  a view includ
 **Docker:** I have used two services: backend_service and mysql_service. backend_serivce containerize my web application and mysl_service containerize mysql database.<br>
 <br>
 **Gunicorn:**
- gunicorn is a python web server which handle concurrent request.it creates process for each worker and each process handle concurrent request.<br>
+ I have used gunicorn in this project to handle multiple HTTP request at a same time.Gunicorn's worker process model is a way to handle multiple requests concurrently. Each worker process can handle multiple requests at a time.all of the worker processes are created before the application starts, and they remain running until the application is stopped.When a request comes in, Gunicorn assigns it to a worker process, The worker process then handles the request and returns the response. Once the request is complete, the worker process is ready to handle another request.Gunicorn can handle multiple requests concurrently because it uses a non-blocking I/O model. This means that the worker process does not wait for a request to complete before it starts handling the next request. Instead, the worker process will handle multiple requests at the same time, switching between them as needed.if a worker process gets down a new process will be created and all the old HTTP request will be sift to new process.<br>
 <br>Database Design : https://drive.google.com/file/d/1C748XCKq61HWiMTg0Swm8zz6H1GpzmDU/view?usp=drive_link<br>
 <br>Class Diagram : https://drive.google.com/file/d/1xEZBJOGFLpyMvgoNKuaxNEFExaMRx494/view?usp=drive_link<br>
 
