@@ -2,7 +2,12 @@
 
 This is a web application  developed using the django framework.Data based is used mysql. I have explained all the routes . <br>
 **Client**<br>
-    put(): create a new client.<br>
+    Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application and tailor it to their specific needs.Below seciton explain about API to  create new client <br>
+    ***API:***Create mew Client<br>
+    ***URL:***timba/client<br>
+    ***HTTP Method:***put()<br>
+    ***Request Parameters:***{"name","address","contact","email"}<br>
+
 **User**<br>
     get() : get information of a user by user_id.<br>
     put(): create user .insert information of user in databases.<br>
