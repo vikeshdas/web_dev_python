@@ -2,7 +2,7 @@
 
 This is a web application  developed using the django framework.Data based is used mysql. I have explained all the routes . <br>
 **Client**<br>
-    Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application and tailor it to their specific needs.Below seciton explain about API to  create new client <br>
+    Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application.Below seciton explain about all Routes for user <br>
     <br>
     **API:** Create new Client
     <br>
@@ -15,8 +15,20 @@ This is a web application  developed using the django framework.Data based is us
     **Response :** {"Client created Successfully"}
     <br>
 
-**User**<br>
-    get() : get information of a user by user_id.<br>
+**USER**<br>
+    Bellow API's help our client to manage their user,like see list of user,add new user,update existing user and delete a user.<br>
+    <br>
+    <br>
+    **API:** get information of a user by user_id.
+    <br>
+    **URL:** timba/user
+    <br>
+    **HTTP Method:** get()
+    <br>
+    **Request Parameters:** {user_id}
+    <br>
+    **Response :** {"Client created Successfully"}
+    <br>
     put(): create user .insert information of user in databases.<br>
     patch() :update user information by user_ id.<br>
     delete() : delete user from the database by user_id.<br>
