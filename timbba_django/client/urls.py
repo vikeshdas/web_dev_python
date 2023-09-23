@@ -1,14 +1,9 @@
 
 from django.urls import path
-# from .views import UserAPIView
-# from .views import UsersApiView
-# from .views import CreateConsignment
-# from .views import Log
-# from .views import Logs
+
 from .view import consignment, log,user,client,role
 from django.views.decorators.csrf import csrf_exempt
 
-# URLConf
 urlpatterns = [
     path('demo/',csrf_exempt(user.Demo.as_view())),
     path('user/',csrf_exempt(user.User_.as_view())),

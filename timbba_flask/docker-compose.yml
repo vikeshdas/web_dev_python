@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backend_service:
+    build: .
+    ports:
+      - "8000:8000"
+  
+  mysql_service:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: Vikeshdasvd@123
+      MYSQL_DATABASE: timbbadb

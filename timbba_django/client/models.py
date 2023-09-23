@@ -29,16 +29,8 @@ class Client(models.Model):
                 'contact': self.contact,
                 'updated_at': self.updated_at,
                 'created_at': self.created_at,
-                # 'contact_person_name': self.contact_person_name,
                 'email': self.email,
             }
-
-
-
-
-
-    # class UserManager(models.Manager):
-#     pass
 
 class User(models.Model):
     id = models.AutoField(primary_key=True)
@@ -49,7 +41,6 @@ class User(models.Model):
     client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # objects = UserManager()
     
     def user_serializer(self):
         role_data = self.role.id  if self.role else None
