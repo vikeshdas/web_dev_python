@@ -1,37 +1,39 @@
 # web_dev_python
 
-This is a web application  developed using the django framework.I have use mysql database. I have explained all the routes . <br>
-**Client**<br>
-    Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application.Below seciton explain about all Routes for user <br>
-    <br>
-    **Create new Client**
-    <br>
-    **URL:** timba/client
-    <br>
-    **HTTP Method:** put()
-    <br>
-    **Request Parameters:** {"name", "address", "contact", "email"}
-    <br>
-    **Response :** {"Client created Successfully"}
-    <br><br>
+This is a web application  developed using the django framework.I have use mysql database. I have explained all the routes . <br><br><br>
 
-**USER**<br>
-    Bellow API's help our client to manage their user,like see list of user,add new user,update existing user and delete a user.<br>
-    <br>
-    <br>
-    **API:** get information of a user by user_id.
-    <br>
-    **URL:** timba/user
-    <br>
-    **HTTP Method:** get()
-    <br>
-    **Request Parameters:** {user_id}
-    <br>
-    **Response :** {"Client created Successfully"}
-    <br>
-    put(): create user .insert information of user in databases.<br>
-    patch() :update user information by user_ id.<br>
-    delete() : delete user from the database by user_id.<br><br><br>
+**Client**<br>
+Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the     ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application.Below     seciton explain about all Routes for user
+<br>
+**Create new Client**
+<br>
+**URL:** timba/client
+<br>
+**HTTP Method:** put()
+<br>
+**Request Parameters:** {"name", "address", "contact", "email"}
+<br>
+**Response :** {"Client created Successfully"}
+<br><br><br>
+
+    
+**User**<br>
+Bellow API's help our client to manage their user,like see list of user,add new user,update existing user and delete a user.<br>
+**API:** get information of a user by user_id.
+<br>
+**URL:** timba/user
+<br>
+**HTTP Method:** get()
+<br>
+**Request Parameters:** {user_id}
+<br>
+**Response :** {"Client created Successfully"}
+<br>
+put(): create user .insert information of user in databases.<br>
+patch() :update user information by user_ id.<br>
+delete() : delete user from the database by user_id.<br><br><br>
+
+    
 **Users**<br>
     get(): fetch information of all users of a client by client_id.<br><br><br>
 **Role**<br>
