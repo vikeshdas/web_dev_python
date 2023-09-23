@@ -1,6 +1,6 @@
 # web_dev_python
 
-This is a web application  developed using the django framework.I have use mysql database. I have explained all the routes . <br><br><br>
+This is a web application  developed using the django framework.I have use mysql database. I have explained all the routes .To handle request concurrently i have used Gunicorn server. <br><br><br>
 
 **Client**<br>
 Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the     ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application.Below     seciton explain about all Routes for user
