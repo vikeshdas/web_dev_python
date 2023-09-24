@@ -1,12 +1,15 @@
-FROM python:3
-ENV PYTHONUNBUFFERED 1
-ENV DJANGO_SETTINGS_MODULE timbba.settings
 
+FROM python:3
 WORKDIR /app
 
-COPY . /app/
-RUN pip install -r requirements.txt
-RUN pip install gunicorn
-EXPOSE 8000
+COPY . /app
 
-CMD ["gunicorn", "-c", "gunicorn_config.py", "timbba.wsgi:application"]
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+ENV FLASK_APP=app
+ENV FLASK_ENV=development
+
+# CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["gunicorn", "-c", "gunicorn_config.py", "app:app"]

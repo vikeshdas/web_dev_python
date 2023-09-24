@@ -42,9 +42,10 @@
 #             return jsonify({'error': str(e)}), 500
 
 
+
 from flask.views import MethodView
 from flask import jsonify
-from . import user_bp  
+from . import user_bp
 from ..models import User
 
 class UserView(MethodView):
