@@ -1,51 +1,53 @@
 # web_dev_python
 
-This is a web application  developed using the django framework.Data based is used mysql. I have explained all the routes . <br>
-**Client**<br>
-    Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application.Below seciton explain about all Routes for user <br>
-    <br>
-    **API:** Create new Client
-    <br>
-    **URL:** timba/client
-    <br>
-    **HTTP Method:** put()
-    <br>
-    **Request Parameters:** {"name", "address", "contact", "email"}
-    <br>
-    **Response :** {"Client created Successfully"}
-    <br>
+This is a web application  developed using the django framework.I have use mysql database. I have explained all the routes .To handle request concurrently i have used Gunicorn server. <br><br><br>
 
-**USER**<br>
-    Bellow API's help our client to manage their user,like see list of user,add new user,update existing user and delete a user.<br>
-    <br>
-    <br>
-    **API:** get information of a user by user_id.
-    <br>
-    **URL:** timba/user
-    <br>
-    **HTTP Method:** get()
-    <br>
-    **Request Parameters:** {user_id}
-    <br>
-    **Response :** {"Client created Successfully"}
-    <br>
-    put(): create user .insert information of user in databases.<br>
-    patch() :update user information by user_ id.<br>
-    delete() : delete user from the database by user_id.<br>
+**Client**<br>
+Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the     ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application.Below     seciton explain about all Routes for user
+<br>
+**Create new Client**
+<br>
+**URL:** timba/client
+<br>
+**HTTP Method:** put()
+<br>
+**Request Parameters:** {"name", "address", "contact", "email"}
+<br>
+**Response :** {"Client created Successfully"}
+<br><br><br>
+
+    
+**User**<br>
+Bellow API's help our client to manage their user,like see list of user,add new user,update existing user and delete a user.<br>
+**API:** get information of a user by user_id.
+<br>
+**URL:** timba/user
+<br>
+**HTTP Method:** get()
+<br>
+**Request Parameters:** {user_id}
+<br>
+**Response :** {"Client created Successfully"}
+<br>
+put(): create user .insert information of user in databases.<br>
+patch() :update user information by user_ id.<br>
+delete() : delete user from the database by user_id.<br><br><br>
+
+    
 **Users**<br>
-    get(): fetch information of all users of a client by client_id.<br>
+    get(): fetch information of all users of a client by client_id.<br><br><br>
 **Role**<br>
-    create a new role.<br>
+    create a new role.<br><br><br>
 **Log**<br>
     put() : insert information of a log in database.<br>
-    get() : get information from a log.<br>
+    get() : get information from a log.<br><br><br>
 **Logs**<br>
     get(): get all logs of a particular consignment by consignment_id.<br>
     Consignment<br>
     put(): create a consignment .insert information of a consignment of a client .it store client_id because each consignment belongs to a <br>client. It also stores user_id by which user this consignment is created.<br>
-    get(): get information of a consignment by consignment_id.<br>
+    get(): get information of a consignment by consignment_id.<br><br><br>
 **Consignments**<br>
-    get() : get all consignments of a particular client by client_id.<br>
+    get() : get all consignments of a particular client by client_id.<br><br><br>
 
 **django**
 I used the VIEW class of django which provides features to create  a view including request ,response handling and error handling.
