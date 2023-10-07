@@ -4,11 +4,22 @@ import json
 from django.http import JsonResponse
 from django.db.utils import IntegrityError
 from datetime import datetime
-import time
-from django.http import HttpResponse    
+   
 
-class Client_(View):
+class ClientView(View):
+    """
+        A view for handling client related operation like create new client.
+    """
     def put(self, request):
+        """
+            Create new client.
+
+            Args:
+                Https request :Contains client data in request body.
+
+            Returns:
+                JsonResponse:return json that client is created successfully. 
+        """
         data = json.loads(request.body)
 
         try:

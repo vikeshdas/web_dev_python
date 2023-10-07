@@ -68,7 +68,7 @@ DATABASES = {
         # 'HOST': 'mysql_service',
          'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'Vikeshdasvd@123',
+        'PASSWORD': 'vikesh',
         'PORT': '3306',
     }
 }

@@ -1,13 +1,27 @@
-from ..models import User,Client,Consignment,Item
+from ..models import User,Client,Consignment
 from django.views import View 
 import json
 from django.http import JsonResponse
-from django.db.utils import IntegrityError
-from django.db.models import Q
 
 
-class Consignment_(View):
+class ConsignmentView(View):
+    """
+        View for handling client related operations 
+
+        Methods:
+            put(self,request): Creates new consignment
+            get(self,request): Fetch details of a consignmetn
+    """
     def put(self, request):
+        """
+            Create a new consignment
+
+            Args: 
+                request: Https request object contains information of a consignment
+            
+            Return:
+                JsonResponse: return a josn about an error or success.
+        """
         data = json.loads(request.body)
 
         try:
@@ -31,6 +45,15 @@ class Consignment_(View):
             return JsonResponse({'error': str(e)}, status=500)
 
     def get(self, request):
+        """
+            Fetch details of a consignment from databasea by Id.
+
+            Args: 
+                request : Http request object ,contains consignment Id.
+            
+            Retruns:
+                JsonResponse: Details of a consignment.if Id not find in Database return a error message.
+        """
         data = json.loads(request.body)
         cons_id = data.get('con_id')
         try:
@@ -42,7 +65,22 @@ class Consignment_(View):
         return JsonResponse(serialized_data,status=201)
     
 class Consignments(View):
+    """
+        Handles operation releted to more then one consignments
+
+        Method:
+            get(self,request): Fetch all consignments of a perticular client.
+    """
     def get(self, request):
+        """
+            Retrive information of all consignments of a perticular client.
+
+            Args:
+               request (HttpRequest): Http request object contais client Id.
+
+            Returns:
+                JsonResponse: A json response with list of consignmens of a perticular client. 
+        """
         data = json.loads(request.body)
         client_id = data.get('client_id')
         try:

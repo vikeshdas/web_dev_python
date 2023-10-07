@@ -10,6 +10,6 @@ EXPOSE 5000
 
 ENV FLASK_APP=app
 ENV FLASK_ENV=development
-
+RUN flask db upgrade
 # CMD ["flask", "run", "--host=0.0.0.0"]
 CMD ["gunicorn", "-c", "gunicorn_config.py", "app:app"]

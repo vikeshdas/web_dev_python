@@ -9,5 +9,5 @@ services:
   mysql_service:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: Vikeshdasvd@123
-      MYSQL_DATABASE: timbbadb
+      MYSQL_ROOT_PASSWORD: vikesh
+      MYSQL_DATABASE: flask_timbbadb
