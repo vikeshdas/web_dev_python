@@ -1,16 +1,9 @@
 # web_dev_python
 
-<<<<<<< HEAD
-This is a web application  developed using the django framework.I have use mysql database. I have explained all the routes .To handle request concurrently i have used Gunicorn server. <br><br><br>
-
-**Client**<br>
-Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the     ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application.Below     seciton explain about all Routes for user
-=======
 This is a web application developed using the Django framework. I have used the MySQL database. I have explained all the routes. To handle requests concurrently I have used the Gunicorn server. <br><br>
 
 **Client**<br>
 Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application. The below section explains all Routes for the user
->>>>>>> vikesh
 <br>
 **Create new Client**
 <br>
@@ -21,21 +14,12 @@ Our application operates on a subscription-based model, which means clients pay 
 **Request Parameters:** {"name", "address", "contact", "email"}
 <br>
 **Response :** {"Client created Successfully"}
-<<<<<<< HEAD
-<br><br><br>
-
-    
-**User**<br>
-Bellow API's help our client to manage their user,like see list of user,add new user,update existing user and delete a user.<br>
-**API:** get information of a user by user_id.
-=======
 <br><br>
 
     
 **User**<br>
 The below route help our client to manage their user, like seeing a list of user, adding new user, updating existing user, and deleting a user.<br>
 **Description:** Get information of a user by user_id.
->>>>>>> vikesh
 <br>
 **URL:** timba/user
 <br>
@@ -45,27 +29,6 @@ The below route help our client to manage their user, like seeing a list of user
 <br>
 **Response :** {"Client created Successfully"}
 <br>
-<<<<<<< HEAD
-put(): create user .insert information of user in databases.<br>
-patch() :update user information by user_ id.<br>
-delete() : delete user from the database by user_id.<br><br><br>
-
-    
-**Users**<br>
-    get(): fetch information of all users of a client by client_id.<br><br><br>
-**Role**<br>
-    create a new role.<br><br><br>
-**Log**<br>
-    put() : insert information of a log in database.<br>
-    get() : get information from a log.<br><br><br>
-**Logs**<br>
-    get(): get all logs of a particular consignment by consignment_id.<br>
-    Consignment<br>
-    put(): create a consignment .insert information of a consignment of a client .it store client_id because each consignment belongs to a <br>client. It also stores user_id by which user this consignment is created.<br>
-    get(): get information of a consignment by consignment_id.<br><br><br>
-**Consignments**<br>
-    get() : get all consignments of a particular client by client_id.<br><br><br>
-=======
 put(): create user. insert information of user in databases.<br>
 patch() :update user information by user_ id.<br>
 delete() : delete user from the database by user_id.<br><br>
@@ -110,7 +73,14 @@ put(): create a consignment .insert information of a consignment of a client .it
 Request Parameters: {user_id,client_id,name,type}<br>
 Response : Json response with text message either success or error<br><br>
 get(): get information of a consignment by consignment_id.
-Request Parameters: {user_id,client_id,name,type}<br>
+Request Parameters: 
+```
+{user_id,
+client_id,
+name,
+type}
+```
+
 Response :   "consignment": {"id": 1,"name": "cons11","type": "0","client_id": 2,"created_by": 2,"updated_by": 2,"created_at": "2023-10-07T12:15:14.713Z","updated_at": "2023-10-07T12:15:14.714Z"}
 <br>
 <br><br><br>
@@ -122,7 +92,6 @@ get() :get all consignments of a particular client by client_id <br>
 Request Parameters: {client_id}<br>
 Response :   "consignments": [{"id": 1,"name": "cons11","type": "0","client_id": 2,"created_by": 2,"updated_by": 2,"created_at": "2023-10-07T12:15:14.713Z","updated_at": "2023-10-07T12:15:14.714Z"}]
 <br><br>
->>>>>>> vikesh
 
 **django**
 I used the VIEW class of django which provides features to create a view including request ,response handling and error handling.
