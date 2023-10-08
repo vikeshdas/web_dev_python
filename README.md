@@ -213,7 +213,9 @@ Gunicorn: I have used gunicorn in this project to handle multiple HTTP request a
 ```
 
 Database Design
+
 <img src="images/database_design.jpg" width="100%" align="top-left" alt="" />
 
-Class Diagram :
+Class Diagram 
+
 <img src="images/Class_Diagram.jpg" width="100%" align="top-left" alt="" />
