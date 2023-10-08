@@ -211,10 +211,9 @@ Docker: I have used two services: backend_service and mysql_service. backend_ser
 ```
 Gunicorn: I have used gunicorn in this project to handle multiple HTTP request at a same time.Gunicorn's worker process model is a way to handle multiple requests concurrently. Each worker process can handle multiple requests at a time.all of the worker processes are created before the application starts, and they remain running until the application is stopped.When a request comes in, Gunicorn assigns it to a worker process, The worker process then handles the request and returns the response. Once the request is complete, the worker process is ready to handle another request.Gunicorn can handle multiple requests concurrently because it uses a non-blocking I/O model. This means that the worker process does not wait for a request to complete before it starts handling the next request. Instead, the worker process will handle multiple requests at the same time, switching between them as needed.if a worker process gets down a new process will be created and all the old HTTP request will be sift to new process.
 ```
-```
-Database Design
-`<img src="images/database_design.jpg" width="100%" align="top-left" alt="" />
 
-Class Diagram :**
-`<img src="images/Class_Diagram.jpg" width="100%" align="top-left" alt="" />
-```
+Database Design
+<img src="images/database_design.jpg" width="100%" align="top-left" alt="" />
+
+Class Diagram :
+<img src="images/Class_Diagram.jpg" width="100%" align="top-left" alt="" />
