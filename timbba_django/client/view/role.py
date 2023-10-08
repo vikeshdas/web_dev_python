@@ -1,15 +1,29 @@
-from ..models import User,Client,Roles,Item
+from ..models import Roles
 from django.views import View 
 import json
 from django.http import JsonResponse
 from django.db.utils import IntegrityError
-from datetime import datetime
-import time
-from django.http import HttpResponse    
+ 
 
 
-class Role_(View):
+class RoleView(View):
+    """
+        View class to handle Role related operation like create role.Role can be like mobile,web .mobile means user can 
+        access information using only mobile,or web or boath.
+
+        Mthods:
+            put(self,request): Create a new role.
+
+    """
     def put(self, request):
+        """
+            Create new role.
+
+            Args:
+                request (HttpRequest): rquest object contains information of a role to save in databse.
+            
+            Reponse(jsonResponse):return jsonresponse either role creaated succesfully or error.
+        """
         data = json.loads(request.body)
 
         try:

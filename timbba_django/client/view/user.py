@@ -1,17 +1,32 @@
-from ..models import User,Client,Consignment,Item
+from ..models import User,Client
 from django.views import View 
 import json
 from django.http import JsonResponse
 from django.db.utils import IntegrityError
-import datetime
-import time
-from django.http import HttpResponse
 
 
 
 
-class User_(View):
+class UserView(View):
+    """
+        A View class to handle user related operations like create new user,fetch information of a user , 
+        update a user and delete a user.
+
+        Methods:
+            patch(self,request):Update user information in a databse.
+            put(self,request): create new user 
+            get(self,request): fetch information of a user from database based on user_id.
+            delete(self,request): delete a perticuar user from database based on user_id.
+    """
     def patch(self, request):
+        """
+            update infromation of a user based on user id.
+
+            Args:
+                request:HttpRequest's object contains user id.
+            
+            Returns(jsonResponse): return a message in json form either successfully updated or error.
+        """
         try:
             data = json.loads(request.body)
             user_id = data.get('id')
@@ -36,6 +51,15 @@ class User_(View):
 
 
     def put(self, request):
+        """
+            Create a new user with unique username and contact number,means save information of user in databse.
+
+            Args:
+                request:HttpRequest's object contains information of a user to save in databasea.
+            
+            Returns:
+                JsonResponse : Returns message in josnform either data saved successfully or fail.
+        """
         data = json.loads(request.body)
 
         try:
@@ -60,9 +84,16 @@ class User_(View):
             return JsonResponse({'error': str(e)}, status=500)
     
     def get(self, request):
+        """
+            Fetch informatins of a user from database, based on user_id.
+
+            Args:
+                request: Httprequest's object containse id of a user.
+            
+            Returns: JsonResponse: returns information of a user in the jsonform.
+        """
         data = json.loads(request.body)
         user_id = data.get('id')
-        # check for client_id as wll for user.
         try:
             user = User.objects.get(id=user_id)
         except User.DoesNotExist:
@@ -73,6 +104,15 @@ class User_(View):
     
 
     def delete(self, request):
+
+        """
+            Delete a user from databse based on user_id.
+
+            Args:
+                HttpRequest's object contains user id, whose information need to delete.
+            
+            Returns: returns message in jsonform either user deleted successfully or error.
+        """
         data = json.loads(request.body)
         user_id = data.get('id')
         
@@ -87,7 +127,23 @@ class User_(View):
 
 
 class Users(View):
+    """
+      A view class handles operation related more then user.like get information of all users related to a client.
+
+      Methods:
+        get(self,request): get information of all users of a client
+
+    """
     def get(self, request):
+        """
+            Fetch all user of a client based on client_id .if client exist in database
+
+            Args:
+                request: HttpRequest's object contains client_id whose all user need to fetch from database.
+            
+            Return: Return information of all user of a client in the jsonform or error if client is invalid.
+                
+        """
         data = json.loads(request.body)
         client_id = data.get('client_id')
         if not Client.objects.filter(id=client_id):
@@ -99,12 +155,3 @@ class Users(View):
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
         
-class Demo(View):
-    def get(self, request):
-        x = request.GET.get('x')
-        print("REQUEST ",x,"START")
-        # time.sleep(5)
-        for i in range(1000000):
-            print("",end="")
-        print("REQUEST ",x,"END")
-        return HttpResponse("Response after delay")
