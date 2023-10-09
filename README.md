@@ -1,8 +1,9 @@
 # web_dev_python
 
-```
-This is a web application developed using the Django framework. I have used the MySQL database. I have explained all the routes. To handle requests concurrently I have used the Gunicorn server. 
-```
+
+### This is a web application developed using the Django framework. I have used the MySQL database. I have explained all the routes. To handle requests concurrently I have used the Gunicorn server.
+
+
 ```
 Client 
 Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application. The below section explains all Routes for the user
@@ -201,11 +202,11 @@ Consignments
                 ]
 ```
 
-```
-django: I used the VIEW class of django which provides features to create a view including request , response handling, and error handling database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
 
-ORM: I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse insread of SQL queries.
-For example:
+### django: I used the VIEW class of django which provides features to create a view including request , response handling, and error handling database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
+
+### ORM: I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse insread of SQL queries.
+### For example:
     class Roles(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -223,7 +224,6 @@ Docker: I have used two services: backend_service and mysql_service. backend_ser
 
 Gunicorn: I have used gunicorn in this project to handle multiple HTTP request at a same time.Gunicorn's worker process model is a way to handle multiple requests concurrently. Each worker process can handle multiple requests at a time.all of the worker processes are created before the application starts, and they remain running until the application is stopped.When a request comes in, Gunicorn assigns it to a worker process, The worker process then handles the request and returns the response. Once the request is complete, the worker process is ready to handle another request.Gunicorn can handle multiple requests concurrently because it uses a non-blocking I/O model. This means that the worker process does not wait for a request to complete before it starts handling the next request. Instead, the worker process will handle multiple requests at the same time, switching between them as needed.if a worker process gets down a new process will be created and all the old HTTP request will be sift to new process.
 
-```
 
 ```
 How to run project
