@@ -6,7 +6,6 @@ from django.db.utils import IntegrityError
 
 
 
-
 class UserView(View):
     """
         A View class to handle user related operations like create new user,fetch information of a user , 

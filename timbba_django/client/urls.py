@@ -5,7 +5,6 @@ from .view import consignment, log,user,client,role
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    # path('demo/',csrf_exempt(user.Demo.as_view())),
     path('user/',csrf_exempt(user.UserView.as_view())),
     path('users/',csrf_exempt(user.Users.as_view())),
     path('consignment/',csrf_exempt(consignment.ConsignmentView.as_view())),

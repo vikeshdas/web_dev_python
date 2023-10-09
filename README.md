@@ -1,4 +1,5 @@
 # web_dev_python
+
 ```
 This is a web application developed using the Django framework. I have used the MySQL database. I have explained all the routes. To handle requests concurrently I have used the Gunicorn server. 
 ```
@@ -23,9 +24,9 @@ Create new Client
 
 ```    
 User
-The below route help our client to manage their user, like seeing a list of user, adding new user, updating existing user, and deleting a user.
+The below route helps our client to manage their user, like seeing a list of users, adding new user, updating existing user, and deleting a user.
 
-Description:Get information of a user by user_id.
+Description: Get information of a user by user_id.
 
     URL: timba/user
     HTTP Method: get()
@@ -77,7 +78,7 @@ Description:Get information of a user by user_id.
                 "message": "User updated successfully"
             }
 
-    delete() : delete user from the database by user_id.
+    delete() :  delete user from the database by user_id.
         Request parameter:{
                 "id":2 
             }
@@ -87,7 +88,7 @@ Description:Get information of a user by user_id.
         }
 ```
 ```    
-Users:- Bellow rote help our client to fetch information of their all users
+Users:- Bellow rote help our client fetch information about their all users
 
 URL: timbba/usres
 HTTP Method: 
@@ -98,21 +99,21 @@ HTTP Method:
 ```
     
 ```    
-Role:- Each user will have one or more then  role in our application. For example a user can access an application using mobile only, another user can access using the web only and someone will have access to both. Some features in the mobile app are not available in the web app and vice versa.
+Role:- Each user will have one or more then  role in our application. For example, a user can access an application using mobile only, another user can access using the web only and someone will have access to both. Some features in the mobile app are not available in the web app and vice versa.
 
-Bellow route helps our client to Create a new role.
+Below route helps our client to Create a new role.
     URL: timbba/role
     HTTP Method: 
         put(): Create a role
             Request Parameters: {rolename}
 
-        Response: Simple message in jsonform if successfully created or Error.
+        Response: Simple message in Json form if successfully created or Error.
 ```
 
 ```
 Log:- Each consignment will have a list of logs. We can fetch or put one log at a time in the database of a particular consignment.
 
-Bellow route helps our client to insert and fetch the log of a consignment.
+Below route helps our client to insert and fetch the log of a consignment.
 
     URL: timbba/log<br>
     HTTP Method:<br>
@@ -140,10 +141,10 @@ Logs:  To fetch information of all logs of consignment
             Request Parameters: {
                     consignment_id
                     }
-            Response : information of a consignment with all logs information in json form
+            Response : information of a consignment with all logs information in Json form
 
 ```
-
+```
 Consignment: Insert information of new consignment, fetch information of existing consignment 
 
     URL: timbba/consignment
@@ -177,6 +178,7 @@ Consignment: Insert information of new consignment, fetch information of existin
                 }
     
 ```    
+```
 Consignments
     URL: timbba/consignment
     HTTP Methods:
@@ -200,17 +202,64 @@ Consignments
 ```
 
 ```
-django: I used the VIEW class of django which provides features to create a view including request ,response handling and error handling.Sql database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
-```
-```
+django: I used the VIEW class of django which provides features to create a view including request , response handling, and error handling database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
+
+ORM: I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse insread of SQL queries.
+For example:
+    class Roles(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+
+    ->we created a class Roles, above class will create table in databse
+    ->if we want to insert data in above table then we don't need to write SQL query. Instead we will create object of the above class, mention below.
+    -> new_obj=Roles(name="web");
+    -> Then new_obj.save() ->this function will save above entry in Roles table.
+    ->So as you can see I created Database table , inserted data in table using object oriented.
+
 Tool
 
 Docker: I have used two services: backend_service and mysql_service. backend_serivce containerizes my web application and mysl_service containerizes MySQL database.
 
-```
 
 Gunicorn: I have used gunicorn in this project to handle multiple HTTP request at a same time.Gunicorn's worker process model is a way to handle multiple requests concurrently. Each worker process can handle multiple requests at a time.all of the worker processes are created before the application starts, and they remain running until the application is stopped.When a request comes in, Gunicorn assigns it to a worker process, The worker process then handles the request and returns the response. Once the request is complete, the worker process is ready to handle another request.Gunicorn can handle multiple requests concurrently because it uses a non-blocking I/O model. This means that the worker process does not wait for a request to complete before it starts handling the next request. Instead, the worker process will handle multiple requests at the same time, switching between them as needed.if a worker process gets down a new process will be created and all the old HTTP request will be sift to new process.
 
+```
+
+```
+How to run project
+    -> Open the Docker application in your system.
+    ->In the terminal run 'command Docker compose up'.
+    ->Above command build container. Then run 'docker exec -it container_name /bin/bash' to access the project running in docker
+    -> Run the command 'python manage.py migrate' to generate tables in the database.
+
+    -> Now you can see your tables using the command 'docker exec -it mysql-container mysql -u your_username -p'
+        -> Enter your mysql password.
+        -> Run command 'SHOW DATABASES;'' to see your databse is created or not.
+        -> run the command 'show tables;' to see all tables in your databse .
+
+```
+
+```
+How did i connect this project to Gunicorn and Docker
+
+Step1:
+    created a gunicorn_config.py file.In gunicorn_config.py file i mentioned number of worker i need for my project. And mention ed port on which my server will listen for request .
+
+Step2:
+    Created a Dockerfile where i have mentioned 
+    ->docer image of python
+    ->specified Django's project setting file
+    ->mentioned working directory as a app. inside container my project will be inside app directory.
+    ->Then copy every thing inside app directory
+    ->Then run requirement.txt file 
+    ->Then run install gunicorn
+    ->then run gunicorn and with gunicorn_config.py
+    All above i have mentioned using the command in Dockerfile.
+
+Step3:
+    Created docker-compose.yml file in which i specified two services one for backend and onother for mysql.
+    I used mysql image for mysql server. In mysql service i mentioned mySQL databse name and mysql password.
+```
 
 Database Design
 
@@ -220,22 +269,7 @@ Class Diagram
 
 <img src="images/Class_Diagram.jpg" width="100%" align="top-left" alt="" />
 
-```
-How to run project
-    -> Open the Docker aplicaiton in you system.
-    ->In terminal run 'command Docker compose up'.
-    ->Above command build container. Tehn run 'docker exec -it container_name /bin/bash' to access project running in docker
-    -> Run command 'python manage.py migrate' to generate tables in database.
 
-    -> Now you can see you tables using command 'docker exec -it mysql-container mysql -u your_username -p'
-        -> enter you mysql password.
-        -> run command 'SHOW DATABASES;'' to see your databse is created or not.
-        -> run command 'show tables;' to see all tables in you databse.
-'
+tables in database
 
-```
-
-```
-    tables in databs
-    <img src="images/dbs.png" width="100%" align="top-left" alt="" />
-```
+<img src="images/dbs.png" width="100%" align="top-left" alt="" />
