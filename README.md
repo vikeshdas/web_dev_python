@@ -208,9 +208,9 @@ Tool
 Docker: I have used two services: backend_service and mysql_service. backend_serivce containerizes my web application and mysl_service containerizes MySQL database.
 
 ```
-```
+
 Gunicorn: I have used gunicorn in this project to handle multiple HTTP request at a same time.Gunicorn's worker process model is a way to handle multiple requests concurrently. Each worker process can handle multiple requests at a time.all of the worker processes are created before the application starts, and they remain running until the application is stopped.When a request comes in, Gunicorn assigns it to a worker process, The worker process then handles the request and returns the response. Once the request is complete, the worker process is ready to handle another request.Gunicorn can handle multiple requests concurrently because it uses a non-blocking I/O model. This means that the worker process does not wait for a request to complete before it starts handling the next request. Instead, the worker process will handle multiple requests at the same time, switching between them as needed.if a worker process gets down a new process will be created and all the old HTTP request will be sift to new process.
-```
+
 
 Database Design
 
@@ -219,3 +219,23 @@ Database Design
 Class Diagram 
 
 <img src="images/Class_Diagram.jpg" width="100%" align="top-left" alt="" />
+
+```
+How to run project
+    -> Open the Docker aplicaiton in you system.
+    ->In terminal run 'command Docker compose up'.
+    ->Above command build container. Tehn run 'docker exec -it container_name /bin/bash' to access project running in docker
+    -> Run command 'python manage.py migrate' to generate tables in database.
+
+    -> Now you can see you tables using command 'docker exec -it mysql-container mysql -u your_username -p'
+        -> enter you mysql password.
+        -> run command 'SHOW DATABASES;'' to see your databse is created or not.
+        -> run command 'show tables;' to see all tables in you databse.
+'
+
+```
+
+```
+    tables in databs
+    <img src="images/dbs.png" width="100%" align="top-left" alt="" />
+```

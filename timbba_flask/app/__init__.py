@@ -5,8 +5,7 @@ import pymysql
 app = Flask(__name__)
 pymysql.install_as_MySQLdb()
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Vikeshdasvd@123@localhost/timbbadb'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
+
 app.config.from_pyfile('config.py')
 db = SQLAlchemy()
 db.init_app(app)
