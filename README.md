@@ -207,10 +207,11 @@ django: I used the VIEW class of django which provides features to create a view
 
 ORM: I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse insread of SQL queries.
 For example:
+```
     class Roles(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
-
+```
     ->we created a class Roles, above class will create table in databse
     ->if we want to insert data in above table then we don't need to write SQL query. Instead we will create object of the above class, mention below.
     -> new_obj=Roles(name="web");
