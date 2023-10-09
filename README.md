@@ -203,10 +203,10 @@ Consignments
 ```
 
 
-### django: I used the VIEW class of django which provides features to create a view including request , response handling, and error handling database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
+django: I used the VIEW class of django which provides features to create a view including request , response handling, and error handling database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
 
-### ORM: I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse insread of SQL queries.
-### For example:
+ORM: I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse insread of SQL queries.
+For example:
     class Roles(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
