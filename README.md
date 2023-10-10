@@ -264,12 +264,16 @@ Step3:
 
 Database Design
 ![Image Alt Text](https://drive.google.com/file/d/1l3f_QpOhlLiOw0TQfbG8IAvhquEsUQtE/view?usp=sharing)
+<img src="images/database_design.jpg" width="100%" align="top-left" alt="" />
 
 Class Diagram 
 ![Image Alt Text](https://drive.google.com/file/d/19LPzznSs94ilxouuaIxT72hhHK-XyQQE/view?usp=sharing)
 
 
+<img src="https://drive.google.com/file/d/19LPzznSs94ilxouuaIxT72hhHK-XyQQE/view?usp=sharing" width="100%" align="top-left" alt="" />
+
 
 tables in database
-![Image Alt Text](https://drive.google.com/file/d/1QRa28N3sbH4a3bEgSoVi9aQotaZcFOzU/view?usp=sharing)
+![Image Alt Text] (https://drive.google.com/file/d/1QRa28N3sbH4a3bEgSoVi9aQotaZcFOzU/view?usp=sharing)
 
+<img src="images/dbs.png" width="100%" align="top-left" alt="" />
