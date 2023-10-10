@@ -6,7 +6,10 @@ from django.http import JsonResponse
 
 class ConsignmentView(View):
     """
-        View for handling consignment related operations 
+        View for handling consignment related operations.Consignment is a excell file which 
+        contains information of logs with its dimentions and wehicle number in which these 
+        logs comes to factory . Same excell file will be inserted in out database. So this
+        class helps to insert consignment information in database.
 
         Methods:
             put(self,request): Creates new consignment
@@ -14,7 +17,8 @@ class ConsignmentView(View):
     """
     def put(self, request):
         """
-            Create a new consignment
+            Create a new consignment. Add information of consignment like wehicle number,consignment name,
+            with client information,user in information who insert these information using my application.
 
             Args: 
                 request: Https request object contains information of a consignment
@@ -66,7 +70,8 @@ class ConsignmentView(View):
     
 class Consignments(View):
     """
-        Handles operation releted to more then one consignments
+        Handles operation releted to more then one consignments.
+        like fetch all logs related to a consignment.
 
         Method:
             get(self,request): Fetch all consignments of a perticular client.

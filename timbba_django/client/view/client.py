@@ -1,4 +1,4 @@
-from ..models import User,Client,Roles,Item
+from ..models import Client
 from django.views import View 
 import json
 from django.http import JsonResponse
@@ -9,10 +9,13 @@ from datetime import datetime
 class ClientView(View):
     """
         A view for handling client related operation like create new client.
+        A client is admin who buy subscription for our application OR we can 
+        client is a owner of a factory who makes logs to plyboard.
     """
     def put(self, request):
         """
-            Create new client.
+            Create new client.This function will require when client will buy subscription.
+            When client signup then this function will be excuting.
 
             Args:
                 Https request :Contains client data in request body.
