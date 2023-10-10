@@ -6,7 +6,7 @@ from django.http import JsonResponse
 
 class ConsignmentView(View):
     """
-        View for handling client related operations 
+        View for handling consignment related operations 
 
         Methods:
             put(self,request): Creates new consignment
