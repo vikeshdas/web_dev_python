@@ -273,4 +273,6 @@ Class Diagram
 
 tables in database
 
+![Image Alt Text](images/dbs.png)
+
 <img src="images/dbs.png" width="100%" align="top-left" alt="" />
