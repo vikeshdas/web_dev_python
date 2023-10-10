@@ -3,6 +3,17 @@ from django.conf import settings
 from django.db import models
 
 class Roles(models.Model):
+    """
+        A django model to create roles table in database with folowing field.
+
+        Attributes:
+            id : it is generated automatically .It uniquely identify each role in database table
+            name:Name of a role in database table.
+        
+        Method:
+            role_serializer(): Returns a dictionary containing serialized role data.
+
+    """
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
 
@@ -13,6 +24,20 @@ class Roles(models.Model):
         }
 
 class Client(models.Model):
+    """
+        A django model to create client table in database.it stores client related data.
+
+        Attributes:
+            id: it is generated automatically .It uniquely identify each client in databsae table.
+            name: Name of client.
+            address: Home address of a client. proper address with city,state,country, zip.
+            contact: A phone number to contact client.
+            updated_at: last updated date of clilent information in database table.
+            created_date: Date of client creation in database table.
+
+        Methods:
+            client_serializer(): returns dictionary of client inforamtion with key value pair.
+    """
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     address = models.TextField()
@@ -33,6 +58,23 @@ class Client(models.Model):
             }
 
 class User(models.Model):
+    """
+        User model to create table in database and stores user's information and role associate with each user.
+
+        Attributes:
+            id: it is generated automatically .It uniquely identify each user in databsae table.
+            name: name of the client.
+            username : it is unique for each user ,We require username when login to the applicaiton.
+            role:  each user will have role ,for exmaple a user can access applicaiton using web or mobile or bothe.
+            contact :phone number of a user so that we can contact when we need.
+            client: each user will be belonging to a perticular client.
+            updated_at: last updated date of user information in database table.
+            created_date: Date of current user creation in database table.
+        
+        Method:
+            user_serializer(): returns dictionary of user inforamtion with key value pair.
+
+    """
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     username = models.CharField(max_length=50, unique=True)
@@ -59,20 +101,38 @@ class User(models.Model):
 
 
 class UserRole(models.Model):
+    """
+        This model creates table in database and stores information of roles of each user .
+        For example if user has role web so this table will have id of role and with user information.
+
+        Attributes:
+            id: it is generated automatically .It uniquely identify each collumn in databsae table.
+            user : it also sotore user id to indegate that this role is of this perticular user.
+            role : id of the role which is provided to the current user.
+    """
+
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     role = models.ForeignKey(Roles, on_delete=models.CASCADE)
 
 
-
-class DataEntity(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-
 class Consignment(models.Model):
+    """
+        This model creates table for consignment.Each consignment 
+        will have more then one logs with log's dimentions.
+
+        Attributes:
+            id: it is generated automatically .It uniquely identify each collumn in databsae table.
+            name : name of the consignment.
+            type:  type of consignment.There is tow type of consignment hardwood and pinewood.
+            client_id: Each consignment will be belonging to a perticular client.
+            updated_at: last updated date of consignment information in database table.
+            created_date: Date of current consignment's creation in database table.
+
+            Method:
+                user_serializer(): returns dictionary of consignment inforamtion with key value pair.with client information
+
+    """
     TYPE_CHOICES = (
         ('Type1', 'Type 1'),
         ('Type2', 'Type 2'),
@@ -103,6 +163,19 @@ class Consignment(models.Model):
         }
 
 class Item(models.Model):
+    """
+        Model creates table to store information of a log.
+
+        Attributes:
+            consignment: each log belongs to a perticular consignment so each log will have consignemnt id.
+            barcode: each log have barcode to uniquely identify each log.
+            length : dimention of log (height of of log)
+            volume : volume of log.
+
+        Method:
+            log_serializer(): returns dictionary of log inforamtion with key value pair.with consignment
+
+    """
     consignment = models.ForeignKey(Consignment, on_delete=models.CASCADE)
     barcode = models.CharField(max_length=50)
     length = models.DecimalField(max_digits=10, decimal_places=2)
@@ -116,8 +189,3 @@ class Item(models.Model):
             'volume': self.volume
         }
     
-class Logs(models.Model):
-    consignment = models.ForeignKey(Consignment, on_delete=models.CASCADE)
-    barcode = models.CharField(max_length=50)
-    length = models.DecimalField(max_digits=10, decimal_places=2)
-    volume = models.DecimalField(max_digits=10, decimal_places=2)
