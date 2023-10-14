@@ -8,20 +8,20 @@ from datetime import datetime
 
 class ClientView(View):
     """
-        A view for handling client related operation like create new client.
-        A client is admin who buy subscription for our application OR we can 
-        client is a owner of a factory who makes logs to plyboard.
+        A view for handling client related operation like create a new client.
+        A client is a admin who buy subscription for our application or we can 
+        say that client is a owner of a factory who makes logs to plyboard.
     """
     def put(self, request):
         """
-            Create new client.This function will require when client will buy subscription.
-            When client signup then this function will be excuting.
+            Create a new client.This function will require when client will buy subscription.
+            When client signup then this function will be executing.
 
             Args:
-                Https request :Contains client data in request body.
+                HttpRequest :Contains client data in request body.
 
             Returns:
-                JsonResponse:return json that client is created successfully. 
+                JsonResponse:return json, that client is created successfully. 
         """
         data = json.loads(request.body)
 

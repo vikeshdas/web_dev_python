@@ -6,25 +6,22 @@ from django.http import JsonResponse
 
 class ConsignmentView(View):
     """
-        View for handling consignment related operations.Consignment is a excell file which 
-        contains information of logs with its dimentions and wehicle number in which these 
-        logs comes to factory . Same excell file will be inserted in out database. So this
-        class helps to insert consignment information in database.
+        View for handling consignment related operations.Consignment is a excel file that 
+        contains information of logs with its dimensions and vehicle number in which these 
+        logs comes to factory . Same excel file will be inserted in to database. So this
+        class helps to insert consignment information in the database.
 
-        Methods:
-            put(self,request): Creates new consignment
-            get(self,request): Fetch details of a consignmetn
     """
     def put(self, request):
         """
-            Create a new consignment. Add information of consignment like wehicle number,consignment name,
-            with client information,user in information who insert these information using my application.
+            Create a new consignment. Add information of consignment like vehicle number,consignment name,
+            with client information,user in information who inserts these information using my application.
 
             Args: 
-                request: Https request object contains information of a consignment
+                request:HTTP's request object contains information of a consignment
             
             Return:
-                JsonResponse: return a josn about an error or success.
+                JsonResponse: success or fail in JSON form
         """
         data = json.loads(request.body)
 
@@ -50,13 +47,13 @@ class ConsignmentView(View):
 
     def get(self, request):
         """
-            Fetch details of a consignment from databasea by Id.
+            Fetch details of a consignment from the database by Id.
 
             Args: 
-                request : Http request object ,contains consignment Id.
+                request : The object of HttpRequest contains consignment Id.
             
-            Retruns:
-                JsonResponse: Details of a consignment.if Id not find in Database return a error message.
+            Returns:
+                JsonResponse: Details of a consignment.if Id not found in database return a error message.
         """
         data = json.loads(request.body)
         cons_id = data.get('con_id')
@@ -70,21 +67,21 @@ class ConsignmentView(View):
     
 class Consignments(View):
     """
-        Handles operation releted to more then one consignments.
-        like fetch all logs related to a consignment.
+        Handles operations related to more than one consignment.
+        like fetching all logs related to a consignment.
 
         Method:
-            get(self,request): Fetch all consignments of a perticular client.
+            get(self,request): Fetch all consignments of a particular client.
     """
     def get(self, request):
         """
-            Retrive information of all consignments of a perticular client.
+            Retrieve information of all consignments of a particular client.
 
             Args:
-               request (HttpRequest): Http request object contais client Id.
+               request (HttpRequest): object of HttpRequest contains client Id.
 
             Returns:
-                JsonResponse: A json response with list of consignmens of a perticular client. 
+                JsonResponse: returns list of consignments of a particular client in JSON format. 
         """
         data = json.loads(request.body)
         client_id = data.get('client_id')

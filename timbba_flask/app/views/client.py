@@ -21,7 +21,7 @@ from flask import request, jsonify, Blueprint
 from app import db
 from ..models import Client  
 
-client_bp = Blueprint('client', __name__)
+client_bp = Blueprint('client_', __name__)
 
 class ClientView(MethodView):
     def post(self):

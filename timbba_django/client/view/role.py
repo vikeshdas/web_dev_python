@@ -8,11 +8,8 @@ from django.db.utils import IntegrityError
 
 class RoleView(View):
     """
-        View class to handle Role related operation like create role.Role can be like mobile,web .mobile means user can 
-        access information using only mobile,or web or boath.
-
-        Mthods:
-            put(self,request): Create a new role.
+        View class to handle Role related operations like creating role. Role can be like mobile,web .mobile means user can 
+        access information using only mobile,or web or both.
 
     """
     def put(self, request):
@@ -20,9 +17,10 @@ class RoleView(View):
             Create new role.
 
             Args:
-                request (HttpRequest): rquest object contains information of a role to save in databse.
-            
-            Reponse(jsonResponse):return jsonresponse either role creaated succesfully or error.
+                request (HttpRequest): object of HttpRequest contains information of a role to save in databse.
+
+            Return:
+                 Response(JsonResponse):return Jsonresponse either role created successfully or error.
         """
         data = json.loads(request.body)
 

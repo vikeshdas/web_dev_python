@@ -7,21 +7,17 @@ from django.http import JsonResponse
 
 class Log(View):
     """
-        Handling log related operations like insert log information(create log),fetch information of a log.
-
-        Methods:
-            put(self,request): Save information of a log in data base.
-            get(self,request): Fetch information of a log from data base based on log_id.
+        Handling log related operations like inserting log information(create log),fetch information of a log.
     """
     def put(self, request):
         """
-            Inseret information of a new log in database.
+            Insert information of a new log in database.
 
             Args:
-                request(HttpRequest): HttpRequst object contains information of a log.
+                request(HttpRequest): object of HttpRequst contains information of a log.
             
             Returns:
-                JsonResponse:Return message either successfully saved or error(fial) in json form.
+                JsonResponse:Return message either successfully saved or error(fail) in JSON format.
         """
         data = json.loads(request.body)
 
@@ -51,7 +47,7 @@ class Log(View):
             Args:
                 request(HttpRequest): HttpRequest object contains log id.
 
-            Response(HttpResponse):Return information of a log in the jsonform or error.
+            Response(HttpResponse):Return information of a log in the JSON format or error.
         """
         data = json.loads(request.body)
         log_id = data.get('id')
@@ -66,21 +62,19 @@ class Log(View):
 
 class Logs(View):
     """
-        View class to Handling operations releted to more then one log.
-
-        Methods:
-            get(self,request): Retrive all logs related to a consignment.
+        View class to Handling operations related to more then one log for example
+        get all logs of a consignment.
 
     """
     def get(self, request):
         """
-            Get informatino of all logs related to a consignment.
+            Get information of all logs related to a consignment.
 
             Args:
-                request(HttpRequest):Http reqeust object contains consignment id.
+                request(HttpRequest):object of HttpRequest contains consignment_id.
             
             Response:
-                JsonResponse: return information of all logs related to a consignment in json form.
+                JsonResponse: return information of all logs related to a consignment in JSON format.
         """
         data = json.loads(request.body)
         consignment_id = data.get('con_id')

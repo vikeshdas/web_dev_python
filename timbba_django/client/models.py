@@ -4,10 +4,10 @@ from django.db import models
 
 class Roles(models.Model):
     """
-        A django model to create roles table in database with folowing field.
+        A Django model to create roles table in database with following field.
 
         Attributes:
-            id : it is generated automatically .It uniquely identify each role in database table
+            id : it is generated automatically .It uniquely identifies each role in database table
             name:Name of a role in database table.
         
         Method:
@@ -25,10 +25,10 @@ class Roles(models.Model):
 
 class Client(models.Model):
     """
-        A django model to create client table in database.it stores client related data.
+        A Django model to create client tables in database.it stores client related data.
 
         Attributes:
-            id: it is generated automatically .It uniquely identify each client in databsae table.
+            id: it is generated automatically .It uniquely identifies each client in databsae table.
             name: Name of client.
             address: Home address of a client. proper address with city,state,country, zip.
             contact: A phone number to contact client.
@@ -36,7 +36,7 @@ class Client(models.Model):
             created_date: Date of client creation in database table.
 
         Methods:
-            client_serializer(): returns dictionary of client inforamtion with key value pair.
+            client_serializer(): returns dictionary of client information with key value pair.
     """
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -59,20 +59,20 @@ class Client(models.Model):
 
 class User(models.Model):
     """
-        User model to create table in database and stores user's information and role associate with each user.
+        User model to create table in database and stores user's information and role associated with each user.
 
         Attributes:
-            id: it is generated automatically .It uniquely identify each user in databsae table.
+            id: it is generated automatically .It uniquely identifies each user in database table.
             name: name of the client.
-            username : it is unique for each user ,We require username when login to the applicaiton.
-            role:  each user will have role ,for exmaple a user can access applicaiton using web or mobile or bothe.
+            username : it is unique for each user ,We require username when login to the application.
+            role:  each user will have role ,for example a user can access applicaiton using web or mobile or both.
             contact :phone number of a user so that we can contact when we need.
             client: each user will be belonging to a perticular client.
             updated_at: last updated date of user information in database table.
             created_date: Date of current user creation in database table.
         
         Method:
-            user_serializer(): returns dictionary of user inforamtion with key value pair.
+            user_serializer(): returns dictionary of user inforamtion with key-value pair.
 
     """
     id = models.AutoField(primary_key=True)
@@ -106,8 +106,8 @@ class UserRole(models.Model):
         For example if user has role web so this table will have id of role and with user information.
 
         Attributes:
-            id: it is generated automatically .It uniquely identify each collumn in databsae table.
-            user : it also sotore user id to indegate that this role is of this perticular user.
+            id: it is generated automatically .It uniquely identifies each column in database table.
+            user : it also stores user id to indicate that this role is of this particular user.
             role : id of the role which is provided to the current user.
     """
 
@@ -119,18 +119,18 @@ class UserRole(models.Model):
 class Consignment(models.Model):
     """
         This model creates table for consignment.Each consignment 
-        will have more then one logs with log's dimentions.
+        will have more than one log with log's dimensions.
 
         Attributes:
-            id: it is generated automatically .It uniquely identify each collumn in databsae table.
+            id: it is generated automatically .It uniquely identifies each column in database table.
             name : name of the consignment.
-            type:  type of consignment.There is tow type of consignment hardwood and pinewood.
+            type:  type of consignment.There is two type of consignment hardwood and pinewood.
             client_id: Each consignment will be belonging to a perticular client.
             updated_at: last updated date of consignment information in database table.
             created_date: Date of current consignment's creation in database table.
 
             Method:
-                user_serializer(): returns dictionary of consignment inforamtion with key value pair.with client information
+                user_serializer(): returns dictionary of consignment information with key value pair.with client information
 
     """
     TYPE_CHOICES = (
@@ -167,13 +167,13 @@ class Item(models.Model):
         Model creates table to store information of a log.
 
         Attributes:
-            consignment: each log belongs to a perticular consignment so each log will have consignemnt id.
-            barcode: each log have barcode to uniquely identify each log.
-            length : dimention of log (height of of log)
+            consignment: each log belongs to a perticular consignment so each log will have consignment id.
+            barcode: each log has barcode to uniquely identify each log.
+            length : dimension of log (height of of log)
             volume : volume of log.
 
         Method:
-            log_serializer(): returns dictionary of log inforamtion with key value pair.with consignment
+            log_serializer(): returns dictionary of log information with key value pair.with consignment
 
     """
     consignment = models.ForeignKey(Consignment, on_delete=models.CASCADE)

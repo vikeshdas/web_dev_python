@@ -8,23 +8,18 @@ from django.db.utils import IntegrityError
 
 class UserView(View):
     """
-        A View class to handle user related operations like create new user,fetch information of a user , 
-        update a user and delete a user.
+        A View class to handle user related operations like creating a new user,fetching information of a user , 
+        updating a user and delete a user.
 
-        Methods:
-            patch(self,request):Update user information in a databse.
-            put(self,request): create new user 
-            get(self,request): fetch information of a user from database based on user_id.
-            delete(self,request): delete a perticuar user from database based on user_id.
     """
     def patch(self, request):
         """
-            update infromation of a user based on user id.
+            Update information of a user based on id of a user.
 
             Args:
-                request:HttpRequest's object contains user id.
+                request:HttpRequest's object contains id of a user.
             
-            Returns(jsonResponse): return a message in json form either successfully updated or error.
+            Returns(JsonResponse): returns a message in Json format either successfully updated or error.
         """
         try:
             data = json.loads(request.body)
@@ -51,13 +46,13 @@ class UserView(View):
 
     def put(self, request):
         """
-            Create a new user with unique username and contact number,means save information of user in databse.
+            Creating a new user with unique username and contact number,means saving information of a user in databse.
 
             Args:
-                request:HttpRequest's object contains information of a user to save in databasea.
+                request:HttpRequest's object contains information of a user to save in database.
             
             Returns:
-                JsonResponse : Returns message in josnform either data saved successfully or fail.
+                JsonResponse : Returns message in JSON format either data saved successfully or failed.
         """
         data = json.loads(request.body)
 
@@ -84,12 +79,12 @@ class UserView(View):
     
     def get(self, request):
         """
-            Fetch informatins of a user from database, based on user_id.
+            Fetch information of a user from database, based on user_id.
 
             Args:
-                request: Httprequest's object containse id of a user.
+                request: HttpRequest's object contains id of a user.
             
-            Returns: JsonResponse: returns information of a user in the jsonform.
+            Returns: JsonResponse: returns information of a user in the JSON format.
         """
         data = json.loads(request.body)
         user_id = data.get('id')
@@ -108,9 +103,9 @@ class UserView(View):
             Delete a user from databse based on user_id.
 
             Args:
-                HttpRequest's object contains user id, whose information need to delete.
+                HttpRequest's object contains id of a user, whose information needs to delete.
             
-            Returns: returns message in jsonform either user deleted successfully or error.
+            Returns: returns message in JSON format either user deleted successfully or error.
         """
         data = json.loads(request.body)
         user_id = data.get('id')
@@ -127,7 +122,7 @@ class UserView(View):
 
 class Users(View):
     """
-      A view class handles operation related more then user.like get information of all users related to a client.
+      A view class handles operations related to more than one user.like get information of all users related to a client.
 
       Methods:
         get(self,request): get information of all users of a client
@@ -135,12 +130,12 @@ class Users(View):
     """
     def get(self, request):
         """
-            Fetch all user of a client based on client_id .if client exist in database
+            Fetch all users of a client based on client_id .if client exist in database
 
             Args:
                 request: HttpRequest's object contains client_id whose all user need to fetch from database.
             
-            Return: Return information of all user of a client in the jsonform or error if client is invalid.
+            Return: information of all user of a client in the JSON format or error if client is invalid.
                 
         """
         data = json.loads(request.body)
