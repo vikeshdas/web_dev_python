@@ -1,10 +1,10 @@
 # web_dev_python
 
 
-## This is a web application developed using the Django framework. I have used the MySQL database. I have explained all the routes. To handle requests concurrently. I have used the Gunicorn server.
+## This is a web application developed using the Django framework. I have used the MySQL database. I have explained all the routes. To handle requests concurrently i have used the Gunicorn server.
 
 ## Client 
-### Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application. The below section explains all Routes for the client.
+### Our application operates on a subscription-based model, which means clients pay a periodic fee to access its features and services. One of the key features of our application is the ability for clients to create and manage multiple user accounts under a single subscription. This flexibility allows organizations and teams to efficiently use our application. The below section explains all routes for the client.
 
 #### - Create new Client
 
@@ -127,7 +127,7 @@ Response: {
 
 ```
 Request Parameters: {
-    clilent_id: 3
+    client_id: 3
     }    
 
 Response : [
@@ -198,6 +198,7 @@ Response: {
 Request Parameters: {
     "con_id":4,
     "client_id": 2
+    "barcode": "151ddf44"
 }
 
 Response:{
@@ -313,15 +314,21 @@ Response :
 ### I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse instead of Row queries.
 For example:
 ```
-    class Roles(models.Model):
+class Roles(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
 ```
-    ->we created a class Roles, above class will create table in database
-    ->if we want to insert data in above table then we don't need to write Row query. Instead we will create object of the above class, mention below.
-    -> new_obj=Roles(name="web");
-    -> Then new_obj.save() ->this function will save above entry in Roles table.
-    ->So as you can see I created Database table , inserted data in table using object oriented.
+
+#### ->we created a class Roles, above class will create table in database
+
+#### ->if we want to insert data in above table then we don't need to write Row query. Instead we will create object of the above class, mention below.
+
+#### -> new_obj=Roles(name="web");
+
+#### -> Then new_obj.save() ->this function will save above entry in Roles table.
+
+#### ->So as you can see I created Database table , inserted data in table using object oriented.
+
 
 ## Tool
 
@@ -333,27 +340,31 @@ For example:
 #### I have used Gunicorn in this project to handle multiple HTTP requests at the same time.Gunicorn's worker process model is a way to handle multiple requests concurrently. Each worker process can handle multiple requests at a time.all of the worker processes are created before the application starts, and they remain running until the application is stopped.When a request comes in, Gunicorn assigns it to a worker process, The worker process then handles the request and returns the response. Once the request is complete, the worker process is ready to handle another request.Gunicorn can handle multiple requests concurrently because it uses a non-blocking I/O model. This means that the worker process does not wait for a request to complete before it starts handling the next request. Instead, the worker process will handle multiple requests at the same time, switching between them as needed.if a worker process gets down a new process will be created and all the old HTTP requests will be sifted to new process.
 
 
-```
-How to run project
-    -> Open the Docker application in your system.
-    ->In the terminal run 'command Docker compose up'.
-    ->Above command build container. Then run 'docker exec -it container_name /bin/bash' to access the project running in docker
-    -> Run the command 'python manage.py migrate' to generate tables in the database.
+## How to run project
 
-    -> Now you can see your tables using the command 'docker exec -it MySQL-container MySQL -u your_username -p'
-        -> Enter your MySQL password.
-        -> Run command 'SHOW DATABASES;'' to see your databse is created or not.
-        -> run the command 'show tables;' to see all tables in your database .
+#### -> Open the Docker application in your system.
 
-```
+#### ->In the terminal run 'command Docker compose up'.
 
-```
-How did i connect this project to Gunicorn and Docker
+#### ->Above command build container. Then run 'docker exec -it container_name /bin/bash' to access the project running in docker
 
-Step1:
+#### -> Run the command 'python manage.py migrate' to generate tables in the database.
+
+#### -> Now you can see your tables using the command 'docker exec -it MySQL-container MySQL -u your_username -p'
+
+#### -> Enter your MySQL password.
+
+#### -> Run command 'SHOW DATABASES;'' to see your databse is created or not.
+
+#### -> run the command 'show tables;' to see all tables in your database .
+
+
+## How did i connect this project to Gunicorn and Docker
+
+### Step1:
     created a gunicorn_config.py file.In gunicorn_config.py file i mentioned number of workers i need for my project. And mention the  port on which my server will listen for requests .
 
-Step2:
+### Step2:
     Created a Dockerfile where i have mentioned 
     ->docer image of python
     ->specified Django's project setting file
@@ -364,10 +375,10 @@ Step2:
     ->then run Gunicorn and with gunicorn_config.py
     All above i have mentioned using the command in Dockerfile.
 
-Step3:
+### Step3:
     Created docker-compose.yml file in which i specified two services one for backend and onother for MySQL.
     I used MySQL image for MySQL server. In MySQL service i mentioned mySQL database name and MySQL password.
-```
+
 
 ## Database Design
 
