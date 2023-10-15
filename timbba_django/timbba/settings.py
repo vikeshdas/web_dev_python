@@ -65,8 +65,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'timbbadb',
-        'HOST': 'mysql_service',
-        #  'HOST': 'localhost',
+        # 'HOST': 'mysql_service',
+         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': 'vikesh',
         'PORT': '3306',
