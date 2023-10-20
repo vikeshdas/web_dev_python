@@ -9,7 +9,19 @@ from flask import jsonify,request
 from ..models import Logs ,Consignment
 
 class LogView(MethodView):
+    """
+        Handling log related operations like inserting log information(create log),fetch information of a log.
+    """
     def put(self):
+        """
+            Insert information of a new log in database.
+
+            Args:
+                request(HttpRequest): object of HttpRequst contains information of a log.
+            
+            Returns:
+                JsonResponse:Return message either successfully saved or error(fail) in JSON format.
+        """
         data = request.get_json()
 
         try:
@@ -33,6 +45,14 @@ class LogView(MethodView):
             return jsonify({'error': str(e)}),400
 
     def get(self):
+        """
+            Fetch information of a log from database using log id.
+
+            Args:
+                request(HttpRequest): HttpRequest object contains log id.
+
+            Response(HttpResponse):Return information of a log in the JSON format or error.
+        """
         try:
             data=request.get_json()
             log_id=data.get("id")
@@ -45,7 +65,21 @@ class LogView(MethodView):
             return jsonify({'error': str(e)}),400
 
 class LogsView(MethodView):
+    """
+        View class to Handling operations related to more then one log for example
+        get all logs of a consignment.
+
+    """
     def get(self):
+        """
+            Get information of all logs related to a consignment.
+
+            Args:
+                request(HttpRequest):object of HttpRequest contains consignment's id.
+            
+            Response:
+                JsonResponse: return information of all logs related to a consignment in JSON format.
+        """
         try:
             data=request.get_json()
             con_id = data.get('con_id')
