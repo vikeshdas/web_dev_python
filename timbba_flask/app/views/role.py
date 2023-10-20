@@ -3,16 +3,28 @@ from flask import request, jsonify, Blueprint
 from app import db
 from ..models import Roles  
 
-role_bp = Blueprint('client', __name__)
+role_bp = Blueprint('Role', __name__)
 
 class RoleView(MethodView):
-    def post(self):
+    """
+        View class to handle Role related operations like creating role. Role can be like mobile,web .mobile means user can 
+        access information using only mobile,or web or both.
+
+    """
+    def put(self):
+        """
+            Create new role.
+
+            Args:
+                request (HttpRequest): object of HttpRequest contains information of a role to save in databse.
+
+            Return:
+                 Response(JsonResponse):return Jsonresponse either role created successfully or error.
+        """
         try:
             data = request.get_json()
-            
-            new_item = Roles(
-                role_name=data['name'],
-            )
+
+            new_item = Roles(name=data['name'],)
             
             db.session.add(new_item)
             
@@ -21,5 +33,6 @@ class RoleView(MethodView):
             return jsonify({'message': 'Role created successfully'}), 201
         except Exception as e:
             return jsonify({'error': str(e)}), 500
-        
+    
+
 role_bp.add_url_rule('/role', view_func=RoleView.as_view('role'))

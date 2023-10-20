@@ -26,9 +26,9 @@ class Log(View):
         except Exception as e:
             return JsonResponse({'error':'Consignment with this id does not exist'}, status=404)
         
-        # duplicate_log=Item.objects.filter(barcode=data.get('barcode'))
-        # if duplicate_log is not None:
-        #     return JsonResponse({'error':'Log with this barcode allredy exist'}, status=404)
+        duplicate_log=Item.objects.filter(barcode=data.get('barcode'))
+        if duplicate_log is not None:
+            return JsonResponse({'error':'Log with this barcode allredy exist'}, status=404)
 
         try:
             consignmentObj=Consignment.objects.get(id=data.get("con_id"))

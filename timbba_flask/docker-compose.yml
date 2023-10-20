@@ -1,37 +1,37 @@
 version: '3'
+services:
+  backend_service:
+    build: .
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - mysql_service  # Ensure that MySQL is up before starting Flask
+  
+  mysql_service:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: vikesh
+      MYSQL_DATABASE: flask_timbbadbs
+
+
 # services:
 #   backend_service:
 #     build: .
 #     ports:
 #       - "8000:8000"
 #     depends_on:
-#       - mysql_service  # Ensure that MySQL is up before starting Flask
-  
+#       - mysql_service
+#     networks:
+#       - my_network
+
 #   mysql_service:
-#     image: mysql:latest
+#     image: mysql
 #     environment:
 #       MYSQL_ROOT_PASSWORD: vikesh
 #       MYSQL_DATABASE: flask_timbbadbs
+#     networks:
+#       - my_network
 
-
-services:
-  backend_service:
-    build: .
-    ports:
-      - "8000:8000"
-    depends_on:
-      - mysql_service
-    networks:
-      - my_network
-
-  mysql_service:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: vikesh
-      MYSQL_DATABASE: flask_timbbadbs
-    networks:
-      - my_network
-
-networks:
-  my_network:
-    driver: bridge
+# networks:
+#   my_network:
+#     driver: bridge
