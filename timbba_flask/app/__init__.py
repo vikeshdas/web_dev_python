@@ -20,11 +20,9 @@ from app.views.consignment import consignment_bp
 from app.views.consignment import consignments_bp
 from app.views.logs import log_bp
 from app.views.logs import logs_bp
-# from app.views.client import client_bp
 
 app.register_blueprint(users_bp)
 app.register_blueprint(user_bp)
-# app.register_blueprint(client_bp)
 app.register_blueprint(role_bp)
 app.register_blueprint(consignment_bp)
 app.register_blueprint(consignments_bp)
