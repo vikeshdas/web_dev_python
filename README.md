@@ -122,7 +122,7 @@ Response: {
 ### Below route help our client to fetch information about their all users
 
 #### - get all users of a client
-#### - URL: timbba/usres
+#### - URL: timbba/users
 #### - HTTP Method: get()
 
 ```
@@ -308,10 +308,10 @@ Response :
 
 
 ## Django
-### I used the VIEW class of Django which provides features to create a view including request , response handling, and error handling , database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represents database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
+### I used the VIEW class of Django which provides features to create a view including request , response handling, and error handling .I have used MySQL database to store the data.ORM feature is used to design the database schema. Defined a model, Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
 
 ## ORM
-### I have used object relation maping in my project. ORM is a way to intract with databse using object oriented. We can use object and class to intract with databse instead of Row queries.
+### I have used object relation mapping in my project. ORM is a way to interact with database using object oriented. We can use object and class to interact with database instead of Row queries.
 For example:
 ```
 class Roles(models.Model):
@@ -321,7 +321,7 @@ class Roles(models.Model):
 
 #### ->we created a class Roles, above class will create table in database
 
-#### ->if we want to insert data in above table then we don't need to write Row query. Instead we will create object of the above class, mention below.
+#### ->if we want to insert data in above table then we don't need to write Row query. Instead we will create object of the above class, mentioned below.
 
 #### -> new_obj=Roles(name="web");
 
@@ -354,7 +354,7 @@ class Roles(models.Model):
 
 #### -> Enter your MySQL password.
 
-#### -> Run command 'SHOW DATABASES;'' to see your databse is created or not.
+#### -> Run command 'SHOW DATABASES;'' to see your database is created or not.
 
 #### -> run the command 'show tables;' to see all tables in your database .
 
