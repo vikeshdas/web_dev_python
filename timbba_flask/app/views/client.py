@@ -8,20 +8,20 @@ from ..models import Client
 
 class ClientView(MethodView):
     """
-        A view for handling client related operation like create a new client.
-        A client is a admin who buy subscription for our application or we can 
+        A view for handling client related operation like creating a new client.
+        A client is a admin who buys subscription for our application or we can 
         say that client is a owner of a factory who makes logs to plyboard.
     """
     def put(self):
         """
-            Create a new client.This function will require when client will buy subscription.
+            Create a new client.This function will be required when a client buys subscription.
             When client signup then this function will be executing.
 
             Args:
                 HttpRequest :Contains client data in request body.
 
             Returns:
-                JsonResponse:return json, that client is created successfully. 
+                JsonResponse:return JSON, that client is created successfully. 
         """
         try:
             data = request.get_json()

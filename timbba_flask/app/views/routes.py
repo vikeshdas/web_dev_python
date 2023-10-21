@@ -1,4 +1,4 @@
-
+from app.views import user,consignment,logs,client,role
 from flask import Blueprint
 
 user_bp = Blueprint('user', __name__, url_prefix='/user')
@@ -10,7 +10,6 @@ logs_bp=Blueprint('logs', __name__, url_prefix='/logs')
 client_bp=Blueprint('client',__name__, url_prefix='/client')
 role_bp=Blueprint('role',__name__, url_prefix='/role')
 
-from app.views import user,consignment,logs,client,role
 
 user_bp.add_url_rule('/', view_func=user.UserView.as_view('user'))
 users_bp.add_url_rule('/', view_func=user.UsersView.as_view('users'))

@@ -46,7 +46,7 @@ class UserView(View):
 
     def put(self, request):
         """
-            Creating a new user with unique username and contact number,means saving information of a user in databse.
+            Creating a new user with unique username and contact number,means saving information of a user in database.
 
             Args:
                 request:HttpRequest's object contains information of a user to save in database.
@@ -100,7 +100,7 @@ class UserView(View):
     def delete(self, request):
 
         """
-            Delete a user from databse based on user_id.
+            Delete a user from database based on user_id.
 
             Args:
                 HttpRequest's object contains id of a user, whose information needs to delete.

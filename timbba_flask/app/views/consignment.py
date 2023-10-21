@@ -88,7 +88,7 @@ class ConsignmentView(MethodView):
 class ConsignmentsView(MethodView):
     """
         Handles operations related to more than one consignment.
-        like fetching all consignments information related of a client.
+        like fetching all consignment information related of a client.
 
         Method:
             get(self,request): Fetch all consignments of a particular client.

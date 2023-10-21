@@ -2,7 +2,7 @@
 from app import db
 class Roles(db.Model):
     """
-        A Django model to create roles table in database with following field.
+        A Django model to create roles table in database with following fieldS.
 
         Attributes:
             id : it is generated automatically .It uniquely identifies each role in database table
@@ -32,11 +32,11 @@ class Client(db.Model):
         A Django model to create client tables in database.it stores client related data.
 
         Attributes:
-            id: it is generated automatically .It uniquely identifies each client in databsae table.
+            id: it is generated automatically .It uniquely identifies each client in database table.
             name: Name of client.
             address: Home address of a client. proper address with city,state,country, zip.
             contact: A phone number to contact client.
-            updated_at: last updated date of clilent information in database table.
+            updated_at: last updated date of client information in database table.
             created_date: Date of client creation in database table.
 
         Methods:
@@ -75,14 +75,14 @@ class User(db.Model):
             id: it is generated automatically .It uniquely identifies each user in database table.
             name: name of the client.
             username : it is unique for each user ,We require username when login to the application.
-            role:  each user will have role ,for example a user can access applicaiton using web or mobile or both.
+            role:  each user will have role ,for example a user can access application using web or mobile or both.
             contact :phone number of a user so that we can contact when we need.
-            client: each user will be belonging to a perticular client.
+            client: each user will be belonging to a particular client.
             updated_at: last updated date of user information in database table.
             created_date: Date of current user creation in database table.
         
         Method:
-            user_serializer(): returns dictionary of user inforamtion with key-value pair.
+            user_serializer(): returns dictionary of user information with key-value pair.
 
     """
     id = db.Column(db.Integer, primary_key=True)
@@ -142,7 +142,7 @@ class Consignment(db.Model):
             id: it is generated automatically .It uniquely identifies each column in database table.
             name : name of the consignment.
             type:  type of consignment.There is two type of consignment hardwood and pinewood.
-            client_id: Each consignment will be belonging to a perticular client.
+            client_id: Each consignment will be belonging to a particular client.
             updated_at: last updated date of consignment information in database table.
             created_date: Date of current consignment's creation in database table.
 
@@ -195,7 +195,7 @@ class Logs(db.Model):
         Model creates table to store information of a log.
 
         Attributes:
-            consignment: each log belongs to a perticular consignment so each log will have consignment id.
+            consignment: each log belongs to a particular consignment so each log will have consignment id.
             barcode: each log has barcode to uniquely identify each log.
             length : dimension of log (height of of log)
             volume : volume of log.

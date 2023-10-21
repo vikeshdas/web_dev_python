@@ -46,7 +46,7 @@ class UserView(MethodView):
 
     """
     def get(self):
-        print("inside get fucniton")
+
         """
             Fetch information of a user from database, based on user_id.
 
@@ -77,7 +77,7 @@ class UserView(MethodView):
     
     def put(self):
         """
-            Creating a new user with unique username and contact number,means saving information of a user in databse.
+            Creating a new user with unique username and contact number,means saving information of a user in database.
 
             Args:
                 request:HttpRequest's object contains information of a user to save in database.
@@ -120,7 +120,7 @@ class UserView(MethodView):
             Args:
                 request:HttpRequest's object contains id of a user.
             
-            Returns(JsonResponse): returns a message in Json format either successfully updated or error.
+            Returns(JsonResponse): returns a message in JSON format either successfully updated or error.
         """
         try:
             data = request.get_json()
@@ -147,7 +147,7 @@ class UserView(MethodView):
     
     def delete(self):
         """
-            Delete a user from databse based on user_id.
+            Delete a user from database based on user_id.
 
             Args:
                 HttpRequest's object contains id of a user, whose information needs to delete.

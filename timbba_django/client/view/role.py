@@ -17,7 +17,7 @@ class RoleView(View):
             Create new role.
 
             Args:
-                request (HttpRequest): object of HttpRequest contains information of a role to save in databse.
+                request (HttpRequest): object of HttpRequest contains information of a role to save in database.
 
             Return:
                  Response(JsonResponse):return Jsonresponse either role created successfully or error.
