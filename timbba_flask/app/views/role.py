@@ -3,8 +3,6 @@ from flask import request, jsonify, Blueprint
 from app import db
 from ..models import Roles  
 
-role_bp = Blueprint('Role', __name__)
-
 class RoleView(MethodView):
     """
         View class to handle Role related operations like creating role. Role can be like mobile,web .mobile means user can 
@@ -34,5 +32,3 @@ class RoleView(MethodView):
         except Exception as e:
             return jsonify({'error': str(e)}), 500
     
-
-role_bp.add_url_rule('/role', view_func=RoleView.as_view('role'))

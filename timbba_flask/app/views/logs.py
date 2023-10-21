@@ -1,6 +1,4 @@
 from app import app, db
-from . import log_bp
-from . import logs_bp
 
 from flask.views import MethodView
 from flask import jsonify,request
@@ -95,6 +93,4 @@ class LogsView(MethodView):
             return jsonify({'error': str(e)}),400
 
         
-logs_bp.add_url_rule('/log_list', view_func=LogsView.as_view('log_list_'))        
-log_bp.add_url_rule('/log', view_func=LogView.as_view('log_'))
 

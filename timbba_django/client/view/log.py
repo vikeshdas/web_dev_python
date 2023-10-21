@@ -78,7 +78,6 @@ class Logs(View):
         """
         data = json.loads(request.body)
         consignment_id = data.get('con_id')
-        print("consignemnt_id",consignment_id)
         consignment_exist=Consignment.objects.filter(id=consignment_id)
         if not consignment_exist:
             return JsonResponse({'error':'Consignment with this id does not exist'}, status=404)

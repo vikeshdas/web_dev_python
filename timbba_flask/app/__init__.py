@@ -12,14 +12,11 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 
-from app.views.user import user_bp
-from app.views.user import users_bp
-from app.views.client import client_bp
-from app.views.role import role_bp
-from app.views.consignment import consignment_bp
-from app.views.consignment import consignments_bp
-from app.views.logs import log_bp
-from app.views.logs import logs_bp
+from app.views.routes import user_bp,users_bp
+from app.views.routes import consignment_bp,consignments_bp
+from app.views.routes import log_bp,logs_bp
+from app.views.routes import client_bp
+from app.views.routes import role_bp
 
 app.register_blueprint(users_bp)
 app.register_blueprint(user_bp)

@@ -18,6 +18,12 @@ class Roles(models.Model):
     name = models.CharField(max_length=255)
 
     def role_serializer(self):
+        """
+            Convert role object into dictionary.This function takes role object and convert into dictionary
+            with id of role and name of role.
+
+            Return: Return A dictionary representing the serialized role object.
+        """
         return {
             'id': self.id,
             'name': self.name,

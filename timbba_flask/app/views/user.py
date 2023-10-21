@@ -3,8 +3,6 @@ from app import app, db
 from flask.views import MethodView
 from flask import jsonify,request
 
-from . import user_bp
-from . import users_bp
 
 from ..models import User,Client
 
@@ -33,7 +31,7 @@ class UsersView(MethodView):
             if not client:
                 return jsonify({"client not found"}),404
             
-            users = User.query.filter(client_id=clien_id).all()
+            users = User.query.filter_by(client_id=clien_id).all()
             user_list = [user.user_serializer() for user in users]
 
             return jsonify({'users': user_list}), 200
@@ -48,6 +46,7 @@ class UserView(MethodView):
 
     """
     def get(self):
+        print("inside get fucniton")
         """
             Fetch information of a user from database, based on user_id.
 
@@ -170,5 +169,3 @@ class UserView(MethodView):
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
-user_bp.add_url_rule('/users', view_func=UsersView.as_view('users'))
-users_bp.add_url_rule('/user', view_func=UserView.as_view('user'))

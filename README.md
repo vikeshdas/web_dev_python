@@ -291,6 +291,7 @@ Request Parameters: {
         "client_id" 1
     }
 
+<<<<<<< Updated upstream
 Response :
 [
         {
@@ -392,3 +393,21 @@ class Roles(models.Model):
 ## tables in database
 
 <img src="images/dbs.png" width="100%" align="top-left" alt="" />
+=======
+**django**
+I used the VIEW class of django which provides features to create  a view including request ,response handling and error handling.
+<br>Sql database is used to store the data.<br>
+<br>ORM feature is used to design the database schema.Defined a model Django models are Python classes that represent database tables. Each model class corresponds to a table, and the class attributes define the table's fields.<br>
+<br>
+**Tool**
+<br>
+<br>
+**Docker:** I have used two services: backend_service and mysql_service. backend_serivce containerize my web application and mysl_service containerize mysql database.<br>
+<br>
+**Gunicorn:**
+ I have used gunicorn in this project to handle multiple HTTP request at a same time.Gunicorn's worker process model is a way to handle multiple requests concurrently. Each worker process can handle multiple requests at a time.all of the worker processes are created before the application starts, and they remain running until the application is stopped.When a request comes in, Gunicorn assigns it to a worker process, The worker process then handles the request and returns the response. Once the request is complete, the worker process is ready to handle another request.Gunicorn can handle multiple requests concurrently because it uses a non-blocking I/O model. This means that the worker process does not wait for a request to complete before it starts handling the next request. Instead, the worker process will handle multiple requests at the same time, switching between them as needed.if a worker process gets down a new process will be created and all the old HTTP request will be sift to new process.<br>
+<br> **Database Design **<br>
+<img src="images/1.jpg" width="100%" align="top-left" alt="" /><br>
+<br>**Class Diagram :**
+<img src="Class_Diagram/1.jpg" width="100%" align="top-left" alt="" /><br>
+>>>>>>> Stashed changes

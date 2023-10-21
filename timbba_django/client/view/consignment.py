@@ -68,7 +68,7 @@ class ConsignmentView(View):
 class Consignments(View):
     """
         Handles operations related to more than one consignment.
-        like fetching all logs related to a consignment.
+        like fetching all consignments information related of a client.
 
         Method:
             get(self,request): Fetch all consignments of a particular client.

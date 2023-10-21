@@ -1,6 +1,5 @@
 from app import app, db
-from . import consignment_bp
-from . import consignments_bp
+
 from datetime import datetime
 
 from flask.views import MethodView
@@ -118,5 +117,3 @@ class ConsignmentsView(MethodView):
         except Exception as e:
             return jsonify({'error': str(e)}),404
         
-consignment_bp.add_url_rule('/consignment', view_func=ConsignmentView.as_view('consignment_view'))
-consignments_bp.add_url_rule('/consignments', view_func=ConsignmentsView.as_view('consignments_view'))
