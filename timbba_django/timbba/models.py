@@ -1,5 +1,7 @@
+"""
+    This module contains Django models for the the Client ,Roles ,User ,UserRole ,Consignment ,Log.
+"""
 
-from django.conf import settings
 from django.db import models
 
 class Roles(models.Model):

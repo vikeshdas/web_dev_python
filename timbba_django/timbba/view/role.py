@@ -1,4 +1,4 @@
-from ..models import Roles
+from ...timbba.models import Roles
 from django.views import View 
 import json
 from django.http import JsonResponse

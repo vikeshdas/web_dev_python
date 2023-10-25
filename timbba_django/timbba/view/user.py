@@ -1,10 +1,10 @@
-from ..models import User,Client
+from ...timbba.models import User,Client
 from django.views import View 
 import json
 from django.http import JsonResponse
 from django.db.utils import IntegrityError
 
-
+ 
 
 class UserView(View):
     """
@@ -138,6 +138,7 @@ class Users(View):
             Return: information of all user of a client in the JSON format or error if client is invalid.
                 
         """
+        print("inside function",request.body)
         data = json.loads(request.body)
         client_id = data.get('client_id')
         if not Client.objects.filter(id=client_id):

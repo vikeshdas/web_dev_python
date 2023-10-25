@@ -1,4 +1,4 @@
-from ..models import Client
+from ...timbba.models import Client
 from django.views import View 
 import json
 from django.http import JsonResponse
