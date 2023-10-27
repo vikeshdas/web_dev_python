@@ -1,0 +1,304 @@
+[33mcommit 4167c4cd96f69c8d3268cf5cbbc8d239c590c36a[m[33m ([m[1;36mHEAD -> [m[1;32mdev_flask[m[33m)[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Oct 21 16:47:43 2023 +0530
+
+    changes in flask app
+
+[33mcommit 3a641fa86163e7d30af487ad199b8030a3ed6652[m[33m ([m[1;31morigin/dev_flask[m[33m)[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Oct 21 12:21:30 2023 +0530
+
+    updated flask app
+
+[33mcommit 02fa1fa38a1e7911834860d499d1d93b3f7cd89e[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Fri Oct 20 08:56:13 2023 +0530
+
+    udated flask
+
+[33mcommit e7cb18ade282e41518c60e67cf454bd94dbe8fe1[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Fri Oct 20 08:54:06 2023 +0530
+
+    updated flask
+
+[33mcommit 0ac9acbdbca2a7b3de12cc8b733f7339e414de5d[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Fri Oct 20 08:49:49 2023 +0530
+
+    updated flask app
+
+[33mcommit ec321543edd5f83ad7838865d8b9ba842da43eb1[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 15 18:37:16 2023 +0530
+
+    updated readme file
+
+[33mcommit 45d8c1b9db3912388ab9fee380e6424de7a38ace[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 15 17:47:04 2023 +0530
+
+    updated readme file
+
+[33mcommit 1cebb488dfd7ed00dd105fe1ad702abae6b29615[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Oct 14 22:54:31 2023 +0530
+
+    currect spelling in docstring
+
+[33mcommit 955308ee862e63e9b2d70ff88d07dfff6f20baa1[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Tue Oct 10 21:18:20 2023 +0530
+
+    updated doc string
+
+[33mcommit b4cc5db6b2ebc6e309db9512ffc168ab1a26c327[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Tue Oct 10 20:55:57 2023 +0530
+
+    added doc string in model
+
+[33mcommit 6903bfb8b372fe801a80edb42d053241eb40048b[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Tue Oct 10 08:57:57 2023 +0530
+
+    added doc string
+
+[33mcommit f31c51496189007557ba29210217a8c9fec72439[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Tue Oct 10 07:08:41 2023 +0530
+
+     completed Readme file
+
+[33mcommit ac2c75ea2b41ed9bcc4bf870ed50d3e65d91ccab[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Tue Oct 10 07:04:47 2023 +0530
+
+     completed Readme file
+
+[33mcommit 1e7317a2f57421e8a91574913aa53c09e8e044f5[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Tue Oct 10 06:47:59 2023 +0530
+
+     completed Readme file
+
+[33mcommit fa84b1d119e95159a253950d4f21c086c73ef25f[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Mon Oct 9 23:08:57 2023 +0530
+
+     completed Readme file
+
+[33mcommit 1dcb183183dd36c47836dc778cfe4b35ccce3267[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Mon Oct 9 23:06:46 2023 +0530
+
+     completed Readme file
+
+[33mcommit 4ce1c9e34a6d91f86aef0e2dcdb1788ae4211cb4[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Mon Oct 9 23:05:25 2023 +0530
+
+     completed Readme file
+
+[33mcommit f8bc457c1567409c9df0591767059b52a7decf60[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Mon Oct 9 23:00:07 2023 +0530
+
+     completed Readme file
+
+[33mcommit 02581c1c5ea7af69c646d58b30803fac6e931e2c[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Mon Oct 9 09:16:18 2023 +0530
+
+    changes in Readme file
+
+[33mcommit a4c5713fc66e0e774a96240a94fcc404bb140fde[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 20:01:45 2023 +0530
+
+    modified Readme.md file
+
+[33mcommit 2203a0cf3eb58afecf373385be33d57829cca2cd[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 19:59:19 2023 +0530
+
+    modified Readme.md file
+
+[33mcommit e378edc255b4981539b16217c5d676ab884b07f4[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 19:56:06 2023 +0530
+
+    modified Readme.md file
+
+[33mcommit 9d41090d1c2d4882dbdfcd9eaff02e9e130881d4[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 13:15:57 2023 +0530
+
+    updated readme
+
+[33mcommit 3e3372d0d994d6a3e3f5bfd91a958773adbacb3a[m
+Merge: 045707b 291e5cc
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 13:12:09 2023 +0530
+
+    Merge branch 'vikesh' into dev
+
+[33mcommit 045707becb751585e36cd75602d52b505356f22e[m
+Merge: 9c8ca95 a14fa3a
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 13:09:23 2023 +0530
+
+    Merge branch 'dev' of github.com:vikeshdas/web_dev_python into dev
+
+[33mcommit 291e5cc81be319482645185ef0b2d163dd1d504a[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 13:05:55 2023 +0530
+
+    minor changes in readme
+
+[33mcommit c12fd48902aa5e312828bda3a8a16711e8e57341[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 12:49:06 2023 +0530
+
+    readme changes
+
+[33mcommit f59d1e8a8c2c78b2c0d96ac71c66383f591af8d1[m
+Merge: 66caa7b 4f46003
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Oct 8 12:42:15 2023 +0530
+
+    Merge branch 'vikesh' of github.com:vikeshdas/web_dev_python into vikesh
+
+[33mcommit 66caa7b0ce0704a3383d18b78db3d9c536975fd4[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Oct 7 18:45:47 2023 +0530
+
+    updated readme and added doc string in files
+
+[33mcommit 4f46003e767b107a951f0cbc485ee78c438990ef[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sat Oct 7 18:41:58 2023 +0530
+
+    Update README.md
+
+[33mcommit 711b871638a66c46d07f1c5b94adb84e34072c1a[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sat Oct 7 18:40:37 2023 +0530
+
+    Update README.md
+
+[33mcommit c650e5b5297b5752d470ff4d5ebebd7246a8e97b[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sat Oct 7 18:34:45 2023 +0530
+
+    Update README.md
+
+[33mcommit f5b24c506a6c4acd0bf1b81b4ff4ec22d23e63a1[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Mon Sep 25 17:09:29 2023 +0530
+
+    udated flask web app
+
+[33mcommit 9c8ca95a57257374c29c63b4ba6a7315424846be[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Sep 24 19:46:31 2023 +0530
+
+    added dcoker file and gunicorn
+
+[33mcommit a14fa3acf6bb6ac0bc78890b9a921c7146a605e4[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sun Sep 24 12:15:57 2023 +0530
+
+    Update __init__.py
+
+[33mcommit ff23c9402943b91b792ecbd2255928caaabd6f54[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sat Sep 23 22:41:35 2023 +0530
+
+    Update README.md
+
+[33mcommit 79a0273a41e85267d0259c53155750e920402047[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sat Sep 23 22:39:56 2023 +0530
+
+    Update README.md
+
+[33mcommit a144d732571ea8680d312b4a395b1fb7fb121955[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sat Sep 23 22:27:27 2023 +0530
+
+    Update README.md
+    
+    Readme file updated
+
+[33mcommit bd8200aebf45b998fc61af60ac2a2098b2039288[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Sep 23 22:14:05 2023 +0530
+
+    added flask_project
+
+[33mcommit 261edb8398c1c6880b0d8976b1da2fba4437b28a[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Fri Sep 22 08:17:38 2023 +0530
+
+    removed comment and modified Readme file
+
+[33mcommit 0d008a93653f38a32574c03f459b998123541358[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Mon Sep 18 00:00:16 2023 +0530
+
+    requirements updated
+
+[33mcommit 2f5ad11178a3685efb8bed1b987d66efca8369ff[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Sep 17 23:52:27 2023 +0530
+
+    requirements updated
+
+[33mcommit 7b543513c1d4d9ded52c5bde8e4593853029ef3c[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Sep 17 23:49:12 2023 +0530
+
+    requirements updated
+
+[33mcommit 1edfc23abbe4629288ca622e05ef8473652a0daa[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sun Sep 17 23:17:55 2023 +0530
+
+    requirements updated
+
+[33mcommit 773b84e8a551ff21771be0c6b842f1b43a789417[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Sep 16 23:20:38 2023 +0530
+
+    updated readme
+
+[33mcommit 74a59d65a0aece23e30707dce07f541955d00d1c[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Sep 16 23:11:15 2023 +0530
+
+    updated readme
+
+[33mcommit f37e3258e0eaca5fc813615adaae2ab9db32698d[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Sep 16 23:08:27 2023 +0530
+
+    updated readme
+
+[33mcommit 033be3df4cca9fa5780d4cb658ad33231c052373[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Sep 16 21:37:37 2023 +0530
+
+    updated readme file
+
+[33mcommit 8b72d63e5b5a035716afd09c9b1b3e3b3dc9accc[m
+Author: vikesh <vk0015262@gmail.com>
+Date:   Sat Sep 9 15:11:36 2023 +0530
+
+    adding django app to git
+
+[33mcommit 42c511db9fe0cd0db8e3cfa787c98e1bf703a85f[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Vikesh <45270421+vikeshdas@users.noreply.github.com>
+Date:   Sat Sep 9 14:52:50 2023 +0530
+
+    Initial commit
