@@ -82,7 +82,7 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='created_consignments', to='timbba.user'),
         ),
         migrations.AddField(
-            model_name='consignment',w
+            model_name='consignment',
             name='updated_by',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='updated_consignments', to='timbba.user'),
         ),

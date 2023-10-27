@@ -341,7 +341,7 @@ I have used Gunicorn in this project to handle multiple HTTP requests at the sam
 
 6.  Enter your MySQL password.
 
-7.  Run command 'SHOW DATABASES;'' to see your databse is created or not.
+7.  Run command 'SHOW DATABASES;'' to see your database is created or not.
 
 8.  run the command 'show tables;' to see all tables in your database .
 
@@ -393,7 +393,7 @@ I used MySQL image for MySQL server. In MySQL service i mentioned mySQL database
 
 - role class has one function put() to create a new role.
 
-- users class used to fetch all users of a client from the databse.
+- users class used to fetch all users of a client from the database.
 
 <img src="images/Class_Diagram.jpg" width="100%" align="top-left" alt="" />
 
