@@ -1,8 +1,12 @@
 from flask.views import MethodView
-from flask import request, jsonify, Blueprint
-from app import db
-from ..models import Roles  
+from flask import request, jsonify
+from app.models import db
+from app.models import Roles  
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 class RoleView(MethodView):
     """
         View class to handle Role related operations like creating role. Role can be like mobile,web .mobile means user can 

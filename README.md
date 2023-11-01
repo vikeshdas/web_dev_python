@@ -382,6 +382,18 @@ class Roles(models.Model):
 
 
 ## Database Design
+<<<<<<< Updated upstream
+=======
+- Client is company that uses our application.Client table stores information of a company. Client can have many users. A consignment always belongs to a client
+
+- A consignment belongs to only one client.A consignment contains many logs.
+
+- Log table stores information of log their dimensions like length,breadth,height.A log can belongs to only one consignment.
+
+- User table stores information of a user like thier roles, client they belongs to ,name etc. A user can have many roles. And a user belongs to only one client.
+
+-  user_role table store information of user's roles.one user can have multiple roles.
+>>>>>>> Stashed changes
 
 <img src="images/database_design.jpg" width="100%" align="top-left" alt="" />
 

@@ -1,12 +1,15 @@
+<<<<<<< Updated upstream
 from app import app, db
 
+=======
+from app.models import db
+>>>>>>> Stashed changes
 from datetime import datetime
 
 from flask.views import MethodView
 from flask import jsonify,request
 
-
-from ..models import Consignment,Client,User
+from app.models import User,Client,Consignment
 
 class ConsignmentView(MethodView):
     """
@@ -116,4 +119,8 @@ class ConsignmentsView(MethodView):
             return jsonify({'consignments': serialize_consigment}), 201
         except Exception as e:
             return jsonify({'error': str(e)}),404
+<<<<<<< Updated upstream
         
+=======
+        
+>>>>>>> Stashed changes

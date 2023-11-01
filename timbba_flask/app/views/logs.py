@@ -1,10 +1,15 @@
+<<<<<<< Updated upstream
 from app import app, db
+=======
+from app.models import db
+
+>>>>>>> Stashed changes
 
 from flask.views import MethodView
 from flask import jsonify,request
 
 
-from ..models import Logs ,Consignment
+from app.models import Logs ,Consignment
 
 class LogView(MethodView):
     """

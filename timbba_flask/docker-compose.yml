@@ -1,14 +1,33 @@
+# version: '3'
+# services:
+#   backend_service:
+#     build: .
+#     ports:
+#       - "8000:8000"
+#     # depends_on:
+#     #   - mysql_service  # Ensure that MySQL is up before starting Flask
+  
+#   mysql_service:
+#     image: mysql:8.0
+#     environment:
+#       MYSQL_ROOT_PASSWORD: vikesh
+#       MYSQL_DATABASE: flask_timbbadbs
+
+
 version: '3'
 services:
   backend_service:
-    build: .
+    # build: .
+    image: timbba_flask
     ports:
       - "8000:8000"
-    # depends_on:
-    #   - mysql_service  # Ensure that MySQL is up before starting Flask
+    volumes:
+      - ./run.py:/timbba_flask/run.py
+    depends_on:
+      - mysql_service  # Ensure that MySQL is up before starting Flask
   
   mysql_service:
-    image: mysql:latest
+    image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: vikesh
       MYSQL_DATABASE: flask_timbbadbs

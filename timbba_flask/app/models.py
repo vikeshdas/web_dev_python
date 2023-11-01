@@ -1,8 +1,17 @@
 
-from app import db
+"""
+    This module contains Flask models for the the Client ,Roles ,User ,UserRole ,Consignment ,Log.
+"""
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 class Roles(db.Model):
     """
+<<<<<<< Updated upstream
         A Django model to create roles table in database with following fieldS.
+=======
+        A Flask model to create roles table in database with following field.
+>>>>>>> Stashed changes
 
         Attributes:
             id : it is generated automatically .It uniquely identifies each role in database table
@@ -29,7 +38,7 @@ class Roles(db.Model):
 
 class Client(db.Model):
     """
-        A Django model to create client tables in database.it stores client related data.
+        A Flask model to create client tables in database.it stores client related data.
 
         Attributes:
             id: it is generated automatically .It uniquely identifies each client in database table.
@@ -197,7 +206,7 @@ class Logs(db.Model):
         Attributes:
             consignment: each log belongs to a particular consignment so each log will have consignment id.
             barcode: each log has barcode to uniquely identify each log.
-            length : dimension of log (height of of log)
+            length : dimension of log (height of the log)
             volume : volume of log.
 
         Method:

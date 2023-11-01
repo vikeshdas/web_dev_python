@@ -1,10 +1,13 @@
-from app import app, db
 
+from flask import logging
+from app.models import db
 from flask.views import MethodView
 from flask import jsonify,request
+from flask import Flask, current_app
+import logging
 
 
-from ..models import User,Client
+from app.models import User,Client,Roles
 
 class UsersView(MethodView):
     """
@@ -16,27 +19,31 @@ class UsersView(MethodView):
     """
     def get(self):
         """
-            Fetch all users of a client based on client_id .if client exist in database
+        Fetch all users of a client based on client_id if the client exists in the database.
 
-            Args:
-                request: HttpRequest's object contains client_id whose all user need to fetch from database.
-            
-            Return: information of all user of a client in the JSON format or error if client is invalid.
-                
+        Args:
+            request: HttpRequest's object contains client_id whose all users need to fetch from the database.
+        
+        Return: information of all users of a client in JSON format or an error if the client is invalid.
         """
         try:
-            data=request.get_json()
-            clien_id = data.get('client_id')
-            client=Client.query.get(clien_id)
+            data = request.get_json()
+            client_id = data.get('client_id')
+            client = Client.query.get(client_id)
             if not client:
-                return jsonify({"client not found"}),404
+                return jsonify({"message": "Client not found"}), 404
             
+<<<<<<< Updated upstream
             users = User.query.filter_by(client_id=clien_id).all()
+=======
+            users = User.query.filter_by(client_id=client_id).all()
+>>>>>>> Stashed changes
             user_list = [user.user_serializer() for user in users]
 
             return jsonify({'users': user_list}), 200
         except Exception as e:
             return jsonify({'error': str(e)}), 500
+
 
 
 class UserView(MethodView):
@@ -76,6 +83,7 @@ class UserView(MethodView):
     
     
     def put(self):
+        print("INSIDE PUT FUNCITON")
         """
             Creating a new user with unique username and contact number,means saving information of a user in database.
 
@@ -85,15 +93,36 @@ class UserView(MethodView):
             Returns:
                 JsonResponse : Returns message in JSON format either data saved successfully or failed.
         """
+        logger = logging.getLogger(__name__)
         try:
             data = request.get_json()
             username=data.get('username')
             contact=data.get('contact')
+            client_id=data.get('client_id')
+            role_id=data.get('role_id')
             duplicate_username = User.query.filter_by(username=username).first()
             contact_duplicate= User.query.filter_by(contact=contact).first()
 
+            logger.info(f'Duplicate username found: {duplicate_username}')
+
+            client=Client.query.filter_by(id=client_id).first()
+            role=Roles.query.filter_by(id=role_id).first()
+ 
+            current_app.logger.info("duplicate_username.",duplicate_username)
+            current_app.logger.info("contact_duplicate.",contact_duplicate)
+            current_app.logger.info("client.",client)
+            current_app.logger.info("role.",role)
+            
+            
+            if not client:
+                return jsonify({'error': 'Client does not exist'}), 404
+            
+            if not role:
+                return jsonify({'error': 'Role does not exist'}), 404
+            
             if duplicate_username:
                 return jsonify({'error': 'username already exist'}), 404
+            
             if contact_duplicate:
                 return jsonify({'error': 'User already exist with this contact number'}), 404
             
@@ -168,4 +197,7 @@ class UserView(MethodView):
             return jsonify({'message': 'User deleted successfully'}), 200
         except Exception as e:
             return jsonify({'error': str(e)}), 500
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
