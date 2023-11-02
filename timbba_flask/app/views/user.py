@@ -33,11 +33,7 @@ class UsersView(MethodView):
             if not client:
                 return jsonify({"message": "Client not found"}), 404
             
-<<<<<<< Updated upstream
-            users = User.query.filter_by(client_id=clien_id).all()
-=======
             users = User.query.filter_by(client_id=client_id).all()
->>>>>>> Stashed changes
             user_list = [user.user_serializer() for user in users]
 
             return jsonify({'users': user_list}), 200
@@ -197,7 +193,3 @@ class UserView(MethodView):
             return jsonify({'message': 'User deleted successfully'}), 200
         except Exception as e:
             return jsonify({'error': str(e)}), 500
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes

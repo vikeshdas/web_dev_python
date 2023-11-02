@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-from app import app, db
-=======
 from app.models import db
 
->>>>>>> Stashed changes
 
 from flask.views import MethodView
 from flask import jsonify,request
@@ -69,7 +65,7 @@ class LogView(MethodView):
 
 class LogsView(MethodView):
     """
-        View class to Handling operations related to more then one log for example
+        View class to Handle operations related to more than one log for example
         get all logs of a consignment.
 
     """

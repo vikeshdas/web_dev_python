@@ -1,5 +1,9 @@
 """
+<<<<<<< HEAD
     This module contains Django models for the Client ,Roles ,User ,UserRole ,Consignment ,Log.
+=======
+    This module contains Django models for the the Client ,Roles ,User ,UserRole ,Consignment ,Log.
+>>>>>>> 1b91e3442f5b33c769760ce1482c73c4b64858ab
 """
 
 from django.db import models
