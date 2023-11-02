@@ -1,13 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-from app import app, db
-
-=======
 from app.models import db
->>>>>>> Stashed changes
-=======
-from app.models import db
->>>>>>> Stashed changes
 from datetime import datetime
 
 from flask.views import MethodView
@@ -26,7 +17,7 @@ class ConsignmentView(MethodView):
     def put(self):
         """
             Create a new consignment. Add information of consignment like vehicle number,consignment name,
-            with client information,user in information who inserts these information using my application.
+            with client information,user information who inserts these information using my application.
 
             Args: 
                 request:HTTP's request object contains information of a consignment
@@ -95,7 +86,7 @@ class ConsignmentView(MethodView):
 class ConsignmentsView(MethodView):
     """
         Handles operations related to more than one consignment.
-        like fetching all consignment information related of a client.
+        like fetching all consignments information related of a client.
 
         Method:
             get(self,request): Fetch all consignments of a particular client.
@@ -123,12 +114,4 @@ class ConsignmentsView(MethodView):
             return jsonify({'consignments': serialize_consigment}), 201
         except Exception as e:
             return jsonify({'error': str(e)}),404
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         
-=======
-        
->>>>>>> Stashed changes
-=======
-        
->>>>>>> Stashed changes

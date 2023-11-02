@@ -24,24 +24,10 @@ def create_app():
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-from app.views.routes import user_bp,users_bp
-from app.views.routes import consignment_bp,consignments_bp
-from app.views.routes import log_bp,logs_bp
-from app.views.routes import client_bp
-from app.views.routes import role_bp
-=======
-=======
->>>>>>> Stashed changes
     app.config.from_pyfile('config.py')
     pymysql.install_as_MySQLdb()
     db.init_app(app)
     Migrate(app, db)
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
     app.add_url_rule("/log", view_func=LogView.as_view("log_view")) 
     app.add_url_rule("/logs", view_func=LogsView.as_view("logs_view")) 

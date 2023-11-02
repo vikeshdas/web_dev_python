@@ -26,11 +26,6 @@ class ClientView(MethodView):
         try:
             data = request.get_json()
             duplicate_client=Client.query.filter_by(contact=data.get('contact')).first()
-<<<<<<< Updated upstream
-            
-=======
-            print("DUPLICATE CLIENT",duplicate_client)
->>>>>>> Stashed changes
             if duplicate_client:
                 return jsonify({'error': 'Duplicate client'}), 404
             new_client = Client(
@@ -49,11 +44,3 @@ class ClientView(MethodView):
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
