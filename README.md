@@ -341,7 +341,7 @@ I have used Gunicorn in this project to handle multiple HTTP requests at the sam
 
 6.  Enter your MySQL password.
 
-7.  Run command 'SHOW DATABASES;'' to see your databse is created or not.
+7.  Run command 'SHOW DATABASES;'' to see your database is created or not.
 
 8.  run the command 'show tables;' to see all tables in your database .
 
@@ -368,11 +368,6 @@ I used MySQL image for MySQL server. In MySQL service i mentioned mySQL database
 
 
 ## Database Design
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> 1b91e3442f5b33c769760ce1482c73c4b64858ab
 - Client is company that uses our application.Client table stores information of a company. Client can have many users. A consignment always belongs to a client
 
 - A consignment belongs to only one client.A consignment contains many logs.
@@ -381,16 +376,7 @@ I used MySQL image for MySQL server. In MySQL service i mentioned mySQL database
 
 - User table stores information of a user like thier roles, client they belongs to ,name etc. A user can have many roles. And a user belongs to only one client.
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
--  user_role table store information of user's roles.one user can have multiple roles.
->>>>>>> Stashed changes
-=======
 -  user_role table store information of user's roles.one user can have multiple roles
->>>>>>> 1b91e3442f5b33c769760ce1482c73c4b64858ab
-=======
--  user_role table store information of user's roles.one user can have multiple roles.
->>>>>>> Stashed changes
 
 <img src="images/database_design.jpg" width="100%" align="top-left" alt="" />
 
@@ -407,7 +393,7 @@ I used MySQL image for MySQL server. In MySQL service i mentioned mySQL database
 
 - role class has one function put() to create a new role.
 
-- users class used to fetch all users of a client from the databse.
+- users class used to fetch all users of a client from the database.
 
 <img src="images/Class_Diagram.jpg" width="100%" align="top-left" alt="" />
 
