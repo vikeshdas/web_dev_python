@@ -381,12 +381,16 @@ I used MySQL image for MySQL server. In MySQL service i mentioned mySQL database
 
 - User table stores information of a user like thier roles, client they belongs to ,name etc. A user can have many roles. And a user belongs to only one client.
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 -  user_role table store information of user's roles.one user can have multiple roles.
 >>>>>>> Stashed changes
 =======
 -  user_role table store information of user's roles.one user can have multiple roles
 >>>>>>> 1b91e3442f5b33c769760ce1482c73c4b64858ab
+=======
+-  user_role table store information of user's roles.one user can have multiple roles.
+>>>>>>> Stashed changes
 
 <img src="images/database_design.jpg" width="100%" align="top-left" alt="" />
 

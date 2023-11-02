@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 from app import app, db
 
+=======
+from app.models import db
+>>>>>>> Stashed changes
 =======
 from app.models import db
 >>>>>>> Stashed changes
@@ -120,7 +124,11 @@ class ConsignmentsView(MethodView):
         except Exception as e:
             return jsonify({'error': str(e)}),404
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         
+=======
+        
+>>>>>>> Stashed changes
 =======
         
 >>>>>>> Stashed changes

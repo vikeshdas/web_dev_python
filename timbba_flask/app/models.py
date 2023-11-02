@@ -8,7 +8,11 @@ db = SQLAlchemy()
 class Roles(db.Model):
     """
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         A Django model to create roles table in database with following fieldS.
+=======
+        A Flask model to create roles table in database with following field.
+>>>>>>> Stashed changes
 =======
         A Flask model to create roles table in database with following field.
 >>>>>>> Stashed changes

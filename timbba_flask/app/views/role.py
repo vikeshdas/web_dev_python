@@ -2,6 +2,10 @@ from flask.views import MethodView
 from flask import request, jsonify
 from app.models import db
 from app.models import Roles  
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 class RoleView(MethodView):
     """
