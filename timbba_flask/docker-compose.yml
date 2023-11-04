@@ -4,8 +4,6 @@ services:
     image: timbba_flask
     ports:
       - "8000:8000"
-    volumes:
-      - ./run.py:/timbba_flask/run.py
     depends_on:
       - mysql_service  
   

@@ -79,7 +79,6 @@ class UserView(MethodView):
     
     
     def put(self):
-        print("INSIDE PUT FUNCITON")
         """
             Creating a new user with unique username and contact number,means saving information of a user in database.
 

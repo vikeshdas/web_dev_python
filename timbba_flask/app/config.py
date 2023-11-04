@@ -15,12 +15,3 @@ MYSQL_PORT = 3306
 SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DB}"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-connection_check = True
-while connection_check:
-    try:
-        connection = pymysql.connect(host=MYSQL_HOST, port=MYSQL_PORT, user=MYSQL_USER, password=MYSQL_PASSWORD, db=MYSQL_DB)
-        print("successfully created connection")
-        connection_check = False
-    except pymysql.OperationalError as e:
-        print(f"Error: {e}. Retrying in 3 seconds...")
-        time.sleep(3)
