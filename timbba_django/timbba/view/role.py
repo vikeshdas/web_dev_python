@@ -1,4 +1,4 @@
-from ...timbba.models import Roles
+from timbba.models import Roles
 from django.views import View 
 import json
 from django.http import JsonResponse
@@ -25,6 +25,10 @@ class RoleView(View):
         data = json.loads(request.body)
 
         try:
+            duplicate_role = Roles.objects.filter(name=data.get('name'))
+            if duplicate_role:
+                return JsonResponse({'error': "Role already exists"}, status=400)
+            
             role = Roles(name=data.get('name'))
             role.save()
             serialized_data = role.role_serializer()

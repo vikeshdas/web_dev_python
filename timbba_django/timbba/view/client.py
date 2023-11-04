@@ -1,4 +1,4 @@
-from ...timbba.models import Client
+from timbba.models import Client
 from django.views import View 
 import json
 from django.http import JsonResponse
@@ -26,6 +26,9 @@ class ClientView(View):
         data = json.loads(request.body)
 
         try:
+            duplicate_client=Client.objects.filter(contact=data.get('contact'))
+            if duplicate_client:
+                return JsonResponse({'error': "Client already exists"}, status=400)
             client = Client(name=data.get('name'),address=data.get('address'),contact=data.get('contact'),updated_at=datetime.now(),created_at=datetime.now(),email=data.get('email'))
             client.save()
             serialized_data = client.client_serializer()

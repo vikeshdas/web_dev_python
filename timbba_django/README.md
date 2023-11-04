@@ -2,7 +2,11 @@
 I used the VIEW class of Django which provides features to create a view including request , response handling, and error handling , database is used to store the data.ORM feature is used to design the database schema. Defined a model Django models are Python classes that represents database tables. Each model class corresponds to a table, and the class attributes define the table's fields.
 
 ## ORM
+<<<<<<< HEAD
+I have used Django's object relation maping in my project. ORM is a way to interact with database using classes. We can create class, object and use them to interact with database instead of writing naked DB queries.
+=======
 I have used Django's object relation maping in my project. ORM is a way to interact with database using classes. We can create class object and use them to interact with database instead of writing naked DB queries.
+>>>>>>> 1b91e3442f5b33c769760ce1482c73c4b64858ab
 
 For example:
 ```

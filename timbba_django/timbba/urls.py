@@ -1,7 +1,7 @@
 
 from django.urls import path
 
-from .view import consignment, log,user,client,role
+from timbba.view import consignment, log,user,client,role
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [

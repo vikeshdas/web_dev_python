@@ -1,4 +1,4 @@
-from ...timbba.models import User,Client
+from timbba.models import User,Client,Roles
 from django.views import View 
 import json
 from django.http import JsonResponse
@@ -59,12 +59,22 @@ class UserView(View):
         try:
             duplicate_username = User.objects.filter(username=data.get('username'))
             contact_duplicate= User.objects.filter(contact=data.get('contact'))
+            exist_role=Roles.objects.filter(id=data.get('role_id'))
+            exist_client=Client.objects.filter(id=data.get('client_id'))
+
+            if not exist_client:
+                return JsonResponse({"error": "Client with this id not exists"}, status=409, safe=False)
+        
+            if not exist_role:
+                return JsonResponse({"error": "Role with this id not exists"}, status=409, safe=False)
+            
             if duplicate_username.exists():
                 return JsonResponse({"error": "User with this username already exists"}, status=409, safe=False)
+            
             if contact_duplicate:
                 return JsonResponse({"error": "User with this contact number already exists"}, status=409, safe=False)
 
-            user = User(name=data.get('name'),username=data.get('username'),role_id=data.get('role'),contact=data.get('contact'),client_id=data.get('client_id'))
+            user = User(name=data.get('name'),username=data.get('username'),role_id=data.get('role_id'),contact=data.get('contact'),client_id=data.get('client_id'))
             user.save()
             serialized_data = user.user_serializer()
             return JsonResponse({'message': 'User created successfully', 'data': serialized_data}, status=201, safe=False)

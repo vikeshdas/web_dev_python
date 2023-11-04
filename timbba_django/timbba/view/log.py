@@ -1,4 +1,4 @@
-from ...timbba.models import Consignment,Item
+from timbba.models import Consignment,Item
 from django.views import View 
 import json
 from django.http import JsonResponse
@@ -27,7 +27,8 @@ class Log(View):
             return JsonResponse({'error':'Consignment with this id does not exist'}, status=404)
         
         duplicate_log=Item.objects.filter(barcode=data.get('barcode'))
-        if duplicate_log is not None:
+        print("duplicate_log",duplicate_log)
+        if duplicate_log.exists():
             return JsonResponse({'error':'Log with this barcode allredy exist'}, status=404)
 
         try:
