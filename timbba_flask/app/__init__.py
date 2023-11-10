@@ -1,7 +1,7 @@
 """
     This file contains all the routes of the project. And configuration for the logger.
 """
-from flask import Flask, logging
+from flask import Flask
 from flask_migrate import Migrate
 import pymysql
 
@@ -11,18 +11,11 @@ from app.views.client import ClientView
 from app.views.role import RoleView
 from app.views.logs import LogsView,LogView
 from .models import db
-import logging
+
 
 def create_app():
     app = Flask(__name__)
 
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG)
-    file_handler = logging.FileHandler('logs/app.log')
-    file_handler.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
 
     app.config.from_pyfile('config.py')
     pymysql.install_as_MySQLdb()
