@@ -1,6 +1,5 @@
 FROM python:3
-ENV PYTHONUNBUFFERED 1
-ENV DJANGO_SETTINGS_MODULE timbba.settings
+
 
 WORKDIR /app
 
